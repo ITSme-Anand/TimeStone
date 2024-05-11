@@ -39,15 +39,16 @@
                     add
                 </span>
             </button>
+            <form action="/task" method="post">
             <div class="popup">
                 <label for="input">enter task</label>
-                <input type="text" class="input">
+                <input type="text" class="input" name="taskName">
                 <div class="prioritydiv">
                     <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
                     <select class="priority" name="priority" id="priority">
-                        <option value="priority1">&#xE153;</option>
-                        <option value="priority2"></option>
-                        <option value="priority3"></option>
+                        <option value="priority1">priority1</option>
+                        <option value="priority2">priority2</option>
+                        <option value="priority3">priority3</option>
                     </select>
                 </div>
                 <div class="timediv">
@@ -56,10 +57,11 @@
                     <input type="time" name="endTime" id="endTime">
 
                 </div>
-                <button class="addTask">
+                <input class="addTask" type="submit" value="submit" >
                     add
-                </button>
+                </input>
             </div>
+        </form>
 
 
 
