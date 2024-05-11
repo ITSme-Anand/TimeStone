@@ -41,6 +41,23 @@
             <div class="popup">
                 <label for="input">enter task</label>
                 <input type="text" class="input">
+                <div class="prioritydiv">
+                    <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
+                    <select class="priority" name="priority" id="priority">
+                        <option value="priority1">&#xE153;</option>
+                        <option value="priority2"></option>
+                        <option value="priority3"></option>
+                    </select>
+                </div>
+                <div class="timediv">
+                    <input type="time" name="startTime" id="startTime">
+                    <p>to</p>
+                    <input type="time" name="endTime" id="endTime">
+
+                </div>
+                <button class="addTask">
+                    add
+                </button>
             </div>
 
 
