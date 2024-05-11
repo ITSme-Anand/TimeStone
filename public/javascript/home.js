@@ -1,4 +1,4 @@
-var buttonflag = 0;
+
 var button = document.querySelector(".add-task");
 button.onclick = ()=>{
     button.style.display = "none";
@@ -13,13 +13,16 @@ button.onclick = ()=>{
 
 var menuBtn = document.querySelector(".topMenuBtn");
 menuBtn.onclick = ()=>{
-    var navigationBar = document.querySelector(".navbar");
-    if(buttonflag==0){
-        buttonflag=1;
-         navigationBar.style.display= "block";
+    var navigationBar = document.querySelector(".navigation");
+    
+    var displayNav = navigationBar.getAttribute("style");
+    console.log(displayNav.endsWith("none;"))
+    if(displayNav.endsWith("none;")){
+        navigationBar.style.display = "block";
     }
     else{
-        buttonflag=0;
         navigationBar.style.display = "none";
     }
+
+    
 }

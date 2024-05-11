@@ -34,6 +34,10 @@
     align-items: center;
 }
 
+.navigation{
+    display: none;
+}
+
 
 .userDetails{
     width: 80%;
