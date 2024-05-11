@@ -1,8 +1,11 @@
 var button = document.querySelector(".add-task");
 button.onclick = ()=>{
     button.style.display = "none";
+    var form = document.createElement("form");
+    form.method = "post";
+    form.action = '/';
     var popup = document.createElement("div");
-    popup.className = "popup"
+    popup.className = "popup";
     var label = document.createElement("label");
     label.for = "input";
     label.innerHTML = "enter task";
@@ -12,6 +15,7 @@ button.onclick = ()=>{
     var btn = document.createElement("btn");
     btn.className = "addTask";
     btn.innerHTML = "add";
+    btn.type = "submit";
     var priorityLabel = document.createElement("label")
     priorityLabel.for = "priority"
     priorityLabel.className = "priorityLabel";
@@ -50,8 +54,10 @@ button.onclick = ()=>{
     popup.appendChild(prioritydiv);
     popup.appendChild(timediv);
     popup.appendChild(btn);
-    document.body.appendChild(popup);
+    form.append(popup);
+    document.body.appendChild(form);
     btn.onclick = ()=>{
         popup.remove();
         button.style.display = "block";
-    };};
+    };
+};

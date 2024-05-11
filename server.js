@@ -9,4 +9,7 @@ app.get('/',(req,res)=>{
     res.render('home')
     res.render('navbar')
 })
-app.listen(3000);``
+app.post('/',async(req,res)=>{
+    console.log(req.body);
+})
+app.listen(3000);
