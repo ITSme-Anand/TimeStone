@@ -22,6 +22,7 @@
 .navbar{
     background-color: #365486;
     position: fixed;
+    top: 5%;
     height: 95%;
     display: flex;
     flex-direction: column;
@@ -32,6 +33,11 @@
     text-align: center;
     align-items: center;
 }
+
+.navigation{
+    display: none;
+}
+
 
 .userDetails{
     width: 80%;
