@@ -1,11 +1,14 @@
 @media screen {
     
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 .headerClass{
     height: 5%;
@@ -54,3 +57,23 @@ body .popup .addTask {
     cursor: pointer;
 
   }
+.priorityLabel{
+    padding: 3px;
+    border-radius: 10px;
+    margin-top: 1%;
+    align-items: center;
+    text-align: center;
+}
+.priority{
+    padding: 3px;
+    margin-top: 5px;
+}
+body .popup .prioritydiv {
+    display: flex;
+    flex-direction: row;
+}
+.timediv{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
