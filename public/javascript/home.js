@@ -23,14 +23,16 @@ button.onclick = ()=>{
     priority.name = "priority";
     priority.id = "priority";
     var option1 = document.createElement("option");
-    option1.innerHTML = '&#xE153;';
-    option1.value = "priority1"
+    option1.innerHTML = "priority1";
+    option1.value = "priority1";
     priority.appendChild(option1);
     var option2 = document.createElement("option");
-    option2.value = "priority2"
+    option2.value = "priority2";
+    option2.innerHTML = "priority2"
     priority.appendChild(option2);
     var option3 = document.createElement("option");
     option3.value = "priority3";
+    option3.innerHTML = "priority3";
     priority.appendChild(option3);
     prioritydiv.appendChild(priorityLabel);
     prioritydiv.appendChild(priority);
