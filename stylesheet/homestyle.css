@@ -1,0 +1,46 @@
+@media screen {
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.headerClass{
+    height: 5%;
+    background-color: skyblue;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.headerClass div,.headerClass span{
+
+}
+
+.iconColor{
+    background-color: rgb(135, 180, 235);
+}
+
+
+
+
+
+
+
+
+
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-task{
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.
+
