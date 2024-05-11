@@ -1,11 +1,14 @@
 @media screen {
     
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 .headerClass{
     height: 5%;
@@ -25,6 +28,7 @@
 .add-task{
     padding: 10px;
     border-radius: 10px;
+    margin-top: 10%;
 
 }
 body .popup{
@@ -32,12 +36,13 @@ body .popup{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 40%;
+    margin-right: 40%;
     background-color: #7FC7D9;
     margin-top: 2.5%;
     padding: 10px;
     border-radius: 10px;
+    border: #0F1035 solid 2px;
 }
 body .popup .addTask {
     /* Add your styles here */
@@ -50,4 +55,25 @@ body .popup .addTask {
     margin-bottom: 5px;
     border: none;
     cursor: pointer;
+
   }
+.priorityLabel{
+    padding: 3px;
+    border-radius: 10px;
+    margin-top: 1%;
+    align-items: center;
+    text-align: center;
+}
+.priority{
+    padding: 3px;
+    margin-top: 5px;
+}
+body .popup .prioritydiv {
+    display: flex;
+    flex-direction: row;
+}
+.timediv{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
