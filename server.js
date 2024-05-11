@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-
-const PORT = process.env.PORT
-const MONGOURL = process.env.MONGO_URL
-
-mongoose.connect(MONGOURL).then(()=>{console.log("Database is connected")).catch((error)=>(console.log(error)))
+PORT = 3000
+MONGO_URL ="mongodb://localhost:27017/ProductivityAppUsers"
+mongoose.connect(MONGO_URL).then(()=>{console.log("Database is connected");
+app.get(PORT,(req,res)=>{
+    console.log("connected")
+})}).catch((error)=>(console.log(error)))
 var path = require('path')
 app.set('view engine','ejs');
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'public')));``
 
 // app.get('/',(req,res)=>{
 //     res.render('home')
