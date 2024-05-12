@@ -1,26 +1,61 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+require('dotenv').config()
 PORT = 3000
-MONGO_URL ="mongodb://localhost:27017/ProductivityAppUsers"
-mongoose.connect(MONGO_URL).then(()=>{console.log("Database is connected");
-app.get(PORT,(req,res)=>{
-    console.log("connected")
-})}).catch((error)=>(console.log(error)))
-var path = require('path')
+
+mongoose.connect(process.env.MONGO_URL)
+const db = mongoose.connection
+db.on('error',(error)=>{console.log(error)})
+db.once('open',()=>{console.log("Connected to Database");})
+var path = require('path');
 app.set('view engine','ejs');
-app.use(express.static(path.join(__dirname,'public')));``
+app.get('/home',(req,res)=>{
+    res.render('home')
+})
+const bodyParser = require('body-parser');
+const TaskSchema = new mongoose.Schema({
+    taskName:{
+        type:String,
+        required:true
+    },
+    priority:{
+        type:String,
+        required:true
+    },
+    startTime:{
+        type:String,
+        required:true
+    },
+    endTime:{
+        type:String,
+        required:true
+    }
+})
+Task = mongoose.model('Tasks',TaskSchema);
+// Configure body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.post('/task',async(req,res)=>{
+    const task = new Task(
+     {
+        taskName:req.body.taskName,
+        priority:req.body.priority,
+        startTime:req.body.startTime,
+        endTime:req.body.endTime
+    }
+        );
+    console.log(req.body);
+    try {
+        const newTask = await task.save();
+        res.status(201).json(newTask);
+    }
+    catch(err){
+        console.log(err)
+    }
+})
 
-// app.get('/',(req,res)=>{
-//     res.render('home')
-// })
-// const bodyParser = require('body-parser');
-
-// // Configure body-parser
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// app.post('/task',async(req,res)=>{
-//     console.log(req.body);
-
-// })
-// app.listen(3000);
+const userRouter = require('./routes/auth');
+app.use('/auth',userRouter);
+app.use(express.static(path.join(__dirname,'public')));
+app.listen(3000);
