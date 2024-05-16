@@ -9,7 +9,12 @@ mongoose.connect(process.env.MONGO_URL)
 const db = mongoose.connection
 db.on('error',(error)=>{console.log(error)})
 db.once('open',()=>{console.log("Connected to Database");})
-
+const session = require('express-session');
+app.use(session({
+    secret: 'secret key',
+    resave:false,
+    saveUninitialized: false
+}))
 
 var path = require('path');
 app.set('view engine','ejs');

@@ -19,6 +19,8 @@ module.exports = class User{
         const userModel = require('./userModel');
         const newUser = new userModel({username:this.username,password:hashPassword});
         newUser.save();
+        
+
     }
 
     static async getUser(username,password){

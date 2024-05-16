@@ -1,11 +1,25 @@
 const express = require('express')
 const User = require('../model/userClass.js');
 const router = express.Router();
+const session = require('express-session');
+const mangoose = require
+const MongoDBSession = require('connect-mongodb-session')(session);
 
+const store = new MongoDBSession({
+    uri:'mongodb://localhost:27017/sessions',
+    collection: "mySessions",
+})
+router.use(session({
+    secret: 'secret key',
+    resave:false,
+    saveUninitialized: false,
+    store:store,
+}))
 router.post('/login/post',async(req,res)=>{
     console.log(req.body);
     var user = await User.getUser(req.body.username,req.body.password)
     if (user.status=='correct password'){
+        
         res.redirect(301,'/home');
         return;
     }
@@ -20,6 +34,9 @@ router.post('/login/post',async(req,res)=>{
 })
 
 router.get('/login',(req,res)=>{
+    req.session.isAuth = true;
+    console.log(req.session);
+    console.log(req.session.id);
     res.render('login');
     
 })
