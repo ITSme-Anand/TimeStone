@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+var path = require('path');
 
 require('dotenv').config()
 PORT = 3000
@@ -9,6 +10,7 @@ mongoose.connect(process.env.MONGO_URL)
 const db = mongoose.connection
 db.on('error',(error)=>{console.log(error)})
 db.once('open',()=>{console.log("Connected to Database");})
+app.use(express.static(path.join(__dirname,'public')));
 const session = require('express-session');
 app.use(session({
     secret: 'secret key',
@@ -16,11 +18,14 @@ app.use(session({
     saveUninitialized: false
 }))
 
-var path = require('path');
 app.set('view engine','ejs');
-app.get('/home',(req,res)=>{
-    res.render('home')
-})
+app.get('/home', (req, res) => {
+    if (req.session.isAuth) {
+        res.render('home');
+    } else {
+        res.redirect('/auth/login');
+    }
+});
 const bodyParser = require('body-parser');
 const TaskSchema = new mongoose.Schema({
     taskName:{
@@ -65,5 +70,4 @@ app.post('/task',async(req,res)=>{
 
 const userRouter = require('./routes/auth');
 app.use('/auth',userRouter);
-app.use(express.static(path.join(__dirname,'public')));
 app.listen(3000);
