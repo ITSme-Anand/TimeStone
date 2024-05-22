@@ -26,12 +26,12 @@ module.exports = class User{
         if(usr){
             var hashPassword = this.hashpass(password);
             if(usr.password == hashPassword){
-                return {status:'correct password',usernam:username};}
-            return {status:'wrong password'};
+                return {status:200,usernam:username};}
+            return {status:400};
         }
         if(!usr){
-            return {status:'user does not exist'};
+            return {status:400};
         }
-        }
+    }
 
 }

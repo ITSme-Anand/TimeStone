@@ -17,15 +17,7 @@ app.use(session({
     resave:false,
     saveUninitialized: false
 }))
-
 app.set('view engine','ejs');
-app.get('/home', (req, res) => {
-    if (req.session.isAuth) {
-        res.render('home');
-    } else {
-        res.redirect('/auth/login');
-    }
-});
 const bodyParser = require('body-parser');
 const TaskSchema = new mongoose.Schema({
     taskName:{
@@ -49,6 +41,19 @@ Task = mongoose.model('Tasks',TaskSchema);
 // Configure body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+
+app.get('/home', async(req, res) => {
+    /*if (req.session.isAuth) {
+        res.render('home');
+    } else {
+        res.redirect('/auth/login');
+    }*/
+    var taskdetails = await Task.find();
+    console.log(taskdetails)
+    res.render('home',{taskdetails:taskdetails});
+});
+
 app.post('/task',async(req,res)=>{
     const task = new Task(
      {
@@ -61,7 +66,8 @@ app.post('/task',async(req,res)=>{
     console.log(req.body);
     try {
         const newTask = await task.save();
-        res.status(201).json(newTask);
+        //res.status(201).json(newTask);
+        res.redirect("/home");
     }
     catch(err){
         console.log(err)
@@ -69,5 +75,6 @@ app.post('/task',async(req,res)=>{
 })
 
 const userRouter = require('./routes/auth');
+const { type } = require('os');
 app.use('/auth',userRouter);
 app.listen(3000);
