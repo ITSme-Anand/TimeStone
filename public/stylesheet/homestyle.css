@@ -18,52 +18,63 @@
     color: #0F1035;
 }
 body{
-    background-image: url("../images/conquer.jpg");
-    background-size: cover; /* Resize the background image to cover the entire container */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-position: center; /* Center the image */
+    background-image: url("../images/stars2.jpeg.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.mainSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
 }
 
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.addTaskdiv{
+    margin-right: 5%;
+    margin-top: 5%;
 }
 .add-task{
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10%;
+    padding: 10%;
+    border-radius: 10%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 150%;
 
 }
-body .popup{
+.popup{
+    height: fit-content;
+    width:24em;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-left: 40%;
-    margin-right: 40%; */
-    background-color: #7FC7D9;
+    background-color: rgba(255, 255, 255,0.1);
     margin-top: 2.5%;
-    padding: 10px;
-    border-radius: 10px;
-    border: #0F1035 solid 2px;
+    padding-top: 1em;
+    border-radius: 2em;
+    border: #ffffff solid 2px;
 }
-body .popup .addTask {
-    /* Add your styles here */
-    /* For example: */
-    background-color: #365486;
-    color: white;
-    padding: 5px 50px;
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border: none;
-    cursor: pointer;
 
-  }
+.Taskinput{
+    height: 3em;
+    margin-top: 1.5em;
+    width: 80%;
+    border-radius: 2em;
+    text-align: center;
+}
+
+body .popup .prioritydiv {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+}
 .priorityLabel{
-    padding: 3px;
-    border-radius: 10px;
+    padding: 3%;
+    border-radius: 10%;
     margin-top: 1%;
     align-items: center;
     text-align: center;
@@ -72,12 +83,21 @@ body .popup .addTask {
     padding: 3px;
     margin-top: 5px;
 }
-body .popup .prioritydiv {
-    display: flex;
-    flex-direction: row;
-}
 .timediv{
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    margin-top: 1.5em ;
 }
+body .popup .addTask {
+    height: 3em;
+    background-color: darkblue;
+    color: white;
+    padding: 5px 50px;
+    border-radius: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border: none;
+    cursor: pointer;
+
+  }
+
