@@ -27,14 +27,26 @@ menuBtn.onclick = ()=>{
     for (var i = 0; i < Tasks.length; i++) {
         console.log(Tasks[i].getAttribute("name")); // Access the 'name' property using getAttribute
         Tasks[i].addEventListener('click', function (event) {
-            console.log("hey");
-            console.log(this.checked);
+            var taskName = document.getElementsByClassName("taskName");
+            var task_ = taskName[0];
+            for (var i = 0; i < taskName.length; i++) {
+                if (taskName[i].innerHTML.trim() == this.getAttribute("name")){
+                    console.log(taskName[i]);
+                    task_ = taskName[i];
+                    console.log(task_);
+                    break;
+                }
+            }
+            if (this.checked) {
+                task_.style.textDecoration = "line-through";
+            } else {
+                task_.style.textDecoration = "none";
+            }
             axios.post('http://localhost:3000/UpdateTask', {
-                "task_name": this.getAttribute("name"),
-                "task_status": this.checked ? "completed" : "incomplete"
-            })
-            .then(response => console.log(response.data))
-            .catch(error => console.error('Error:', error));
-
+                    "task_name": this.getAttribute("name"),
+                    "task_status": this.checked ? "completed" : "incomplete"
+                })
+                .then(response => console.log(response.data))
+                .catch(error => console.error('Error:', error));
         });
     }
