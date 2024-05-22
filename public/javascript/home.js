@@ -1,14 +1,14 @@
 
 var button = document.querySelector(".add-task");
+var taskPopup = document.querySelector(".popup");
 button.onclick = ()=>{
     button.style.display = "none";
-    var taskadder = document.querySelector(".popup")
-    taskadder.style.display = "flex";
+    taskPopup.style.display = "flex";
     btn = document.querySelector(".addTask")
 
     btn.onclick = ()=>{
-        taskadder.style.display = "none";
-        button.style.display = "block";
+        taskPopup.style.display = "none";
+        button.style.display = "flex";
     };};
 
 var menuBtn = document.querySelector(".topMenuBtn");

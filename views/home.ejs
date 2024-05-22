@@ -15,7 +15,7 @@
 
     </head>
     <body>
-        <div class="headerClass" style="background-image">
+        <div class="headerClass">
             <button class="topMenuBtn">
                 <span class="material-symbols-outlined iconColor">
                     menu
@@ -67,7 +67,7 @@
                         </div>
                         <div class="checkbox">
                             <label class="container">
-                                <input type="checkbox" name ="<%=i.taskName%>" value="true" class="tasks">
+                                <input type="checkbox" name ="<%=i.task%>" value="true" class="tasks">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -76,37 +76,43 @@
             </div>
         
             <div class="addTaskdiv">
-                <button class="add-task" onclick="">
-                    <img src="../public/images/plus.webp" alt="">
-                    <span> Add Task</span>
-                </button>
-                <form action="/task" method="post">
-                <div class="popup">
-                    <div>
-                        <label for="input" style="color: whitesmoke;font-size: large;">Enter Task</label>
-                    </div>
-                    <div class="mainSection" style="justify-content: space-around;">
-                        <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
-                    </div>
-                    <div class="prioritydiv">
-                        <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
-                        <select class="priority" name="priority" id="priority">
-                            <option value="priority1">priority1</option>
-                            <option value="priority2">priority2</option>
-                            <option value="priority3">priority3</option>
-                        </select>
-                    </div>
-                    <div class="timediv">
-                        <input type="time" name="startTime" id="startTime">
-                        <p>-</p>
-                        <input type="time" name="endTime" id="endTime">
-                    </div>
-                    <div>
-                        <input class="addTask" type="submit" value="Save" > </input>
-                    </div>
-                        
+                <div>
+                    <button class="add-task">
+                        <span class="material-symbols-outlined" style="width: 20%;text-align: center;">
+                            add_circle
+                        </span>
+                        <span> Add Task</span>
+                    </button>
                 </div>
-                </form>
+                <div>
+                    <form action="/task" method="post">
+                    <div class="popup">
+                        <div>
+                            <label for="input" style="color: whitesmoke;font-size: large;">Enter Task</label>
+                        </div>
+                        <div class="mainSection" style="justify-content: space-around;">
+                            <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
+                        </div>
+                        <div class="prioritydiv">
+                            <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
+                            <select class="priority" name="priority" id="priority">
+                                <option value="priority1">priority1</option>
+                                <option value="priority2">priority2</option>
+                                <option value="priority3">priority3</option>
+                            </select>
+                        </div>
+                        <div class="timediv">
+                            <input type="time" name="startTime" id="startTime">
+                            <p>-</p>
+                            <input type="time" name="endTime" id="endTime">
+                        </div>
+                        <div>
+                            <input class="addTask" type="submit" value="Save" > </input>
+                        </div>
+                            
+                    </div>
+                    </form>
+                </div>
             </div>
     </section>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
