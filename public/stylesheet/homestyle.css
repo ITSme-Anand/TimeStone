@@ -18,7 +18,7 @@
     color: #0F1035;
 }
 body{
-    background-image: url("../images/stars2.jpeg.jpg");
+    background-image: url("../images/rose.jpeg");
     background-position:center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -47,21 +47,20 @@ body{
 
 }
 body .popup{
+    height: 12em;
+    width: 18em;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-left: 40%;
-    margin-right: 40%; */
-    background-color: #7FC7D9;
+    background-color: rgba(255, 255, 255,0.1);
     margin-top: 2.5%;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 1em;
+    border-radius: 2em;
     border: #0F1035 solid 2px;
 }
+.popup 
 body .popup .addTask {
-    /* Add your styles here */
-    /* For example: */
     background-color: #365486;
     color: white;
     padding: 5px 50px;

@@ -22,7 +22,7 @@
                 </span>
             </button>
             
-            <div class="headerClass" style="justify-content: center;">
+            <div class="headerClass" style="justify-content:center;">
                 <h2>TimeStone</h2>
             </div>
             <div>
@@ -53,7 +53,7 @@
                     <% if (i.priority == "priority3") { %>
                         <% taskcolor = "green";%>
                     <% } %>
-                    <% let taskbg = `background-color : ${taskcolor};` ; %>
+                    <% let taskbg = `border-color : ${taskcolor};` ; %>
                     
                     <div class="taskCard" style ="<%= taskbg %>">
                         <div class="sno">
@@ -83,7 +83,7 @@
                 </button>
                 <form action="/task" method="post">
                 <div class="popup">
-                    <label for="input">enter task</label>
+                    <label for="input">Enter Task</label>
                     <input type="text" class="input" name="taskName">
                     <div class="prioritydiv">
                         <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
@@ -99,7 +99,7 @@
                         <input type="time" name="endTime" id="endTime">
 
                     </div>
-                        <input class="addTask" type="submit" value="submit" > </input>
+                        <input class="addTask" type="submit" value="Save" > </input>
                 </div>
                 </form>
             </div>

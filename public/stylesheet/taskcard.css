@@ -5,8 +5,8 @@
 }
 .taskCard{
     margin-top: 0.5em;
-    background-color: chocolate;
     display: flex;
+    background-color: rgba(255,255,255,0.4);
     flex-direction: row;
     justify-content: space-around;
     border:solid black 2px;
@@ -19,6 +19,7 @@
     margin-left: 2em;
 }
 .taskDetails{
+    margin-left: 7%;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -41,9 +42,10 @@
     align-items: center;
     width: 67%;
     height: 2em;
-    font-weight: 300;
     font-size: 1.25em;
-    font-family: "Poetsen One", sans-serif;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
 }
 .time{
     display: flex;
@@ -61,6 +63,13 @@
     width: 4%;
     height: 2em;
 }
+
+
+
+
+
+
+/*styling for the checkbox*/
 
 /* The container */
 .container {
