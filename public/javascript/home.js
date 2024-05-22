@@ -22,9 +22,19 @@ menuBtn.onclick = ()=>{
     }
     else{
         navigationBar.style.display = "none";
-    }
+    }};
+    var Tasks = document.getElementsByClassName("tasks");
+    for (var i = 0; i < Tasks.length; i++) {
+        console.log(Tasks[i].getAttribute("name")); // Access the 'name' property using getAttribute
+        Tasks[i].addEventListener('click', function (event) {
+            console.log("hey");
+            console.log(this.checked);
+            axios.post('http://localhost:3000/UpdateTask', {
+                "task_name": this.getAttribute("name"),
+                "task_status": this.checked ? "completed" : "incomplete"
+            })
+            .then(response => console.log(response.data))
+            .catch(error => console.error('Error:', error));
 
-    
-}
-var Tasks = document.querySelector(".tasks");
-console.log(Tasks)
+        });
+    }

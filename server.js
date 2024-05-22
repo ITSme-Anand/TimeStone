@@ -35,6 +35,10 @@ const TaskSchema = new mongoose.Schema({
     endTime:{
         type:String,
         required:true
+    },
+    status:{
+        type:String,
+        default:"incomplete"
     }
 })
 Task = mongoose.model('Tasks',TaskSchema);
@@ -73,7 +77,19 @@ app.post('/task',async(req,res)=>{
         console.log(err)
     }
 })
-
+app.post('/UpdateTask', async (req, res) => {
+    console.log(req.body);
+    const task = req.body.task_name;
+    const status = req.body.task_status;
+    try {
+        const doc = await Task.findOneAndUpdate({taskName: task}, {status: status});
+        console.log(doc);
+        res.status(200).send("Updated");
+    } catch (err) {
+        console.log("Something wrong when updating data!", err);
+        res.status(400).send("Error");
+    }
+});
 const userRouter = require('./routes/auth');
 const { type } = require('os');
 app.use('/auth',userRouter);
