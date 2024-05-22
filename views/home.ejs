@@ -54,12 +54,18 @@
                         <% taskcolor = "green";%>
                     <% } %>
                     <% let taskbg = `border-color : ${taskcolor};` ; %>
+                    <% let strikeThroughStr = `text-decoration: none;` ; %>
+                    <% let checkedStr = "" %>
+                    <% if (i.status == "completed") { %>
+                           <% checkedStr = "checked" %>
+                           <% strikeThroughStr = `text-decoration: line-through;` ;%>
+                    <% } %>
                     
-                    <div class="taskCard" style ="<%= taskbg %>">
+                    <div class="taskCard" style="<%= taskbg %>">
                         <div class="sno">
                             <h3><%= index + 1 %></h3>
                         </div>
-                        <div class="taskName">
+                        <div class="taskName" style="<%= strikeThroughStr %>">
                             <%= i.taskName %>
                         </div>
                         <div class="time">
@@ -67,7 +73,7 @@
                         </div>
                         <div class="checkbox">
                             <label class="container">
-                                <input type="checkbox" name ="<%=i.taskName%>" value="true" class="tasks">
+                                <input type="checkbox" name ="<%=i.taskName%>" value="true" class="tasks" <%= checkedStr%> >
                                 <span class="checkmark"></span>
                             </label>
                         </div>
