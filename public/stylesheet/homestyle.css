@@ -32,19 +32,43 @@ body{
 }
 
 .addTaskdiv{
-    margin-right: 5%;
-    margin-top: 5%;
-}
-.add-task{
-    padding: 10%;
-    border-radius: 10%;
     margin-top: 5%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: left;
+    width: 30%;
+}
+
+/*button*/
+
+.add-task{
+    height: 4em;
+    padding: 5%;
+    border-radius: 2em;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 150%;
+    
 
 }
+.add-task span{
+    width: 80%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.add-task:hover{
+    background-color: rgba(180, 180, 180, 0.737);
+    cursor: pointer;
+}
+
+
+
+/*pop up */
+
 .popup{
     height: fit-content;
     width:24em;
@@ -99,5 +123,5 @@ body .popup .addTask {
     border: none;
     cursor: pointer;
 
-  }
+}
 
