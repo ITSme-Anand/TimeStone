@@ -90,6 +90,24 @@ app.post('/UpdateTask', async (req, res) => {
         res.status(400).send("Error");
     }
 });
+
+app.post('/deleteTask', async(req,res)=>{
+    console.log(req.body);
+    const task = req.body.task_name;
+    console.log(task)
+    try{
+        const doc = await Task.findOneAndDelete(
+            {"taskName":task}
+        )
+        console.log(doc);
+        res.status(200).send("updated");
+        
+    }
+    catch(err){
+        console.log("Something wrong when deleting data!", err);
+        res.status(400).send("Error");
+    }
+})
 const userRouter = require('./routes/auth');
 const { type } = require('os');
 app.use('/auth',userRouter);

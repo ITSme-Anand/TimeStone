@@ -50,3 +50,15 @@ menuBtn.onclick = ()=>{
                 .catch(error => console.error('Error:', error));
         });
     }
+
+    var deleteTaskBtn = document.querySelector('.deleteIcon');
+    deleteTaskBtn.addEventListener('click', function(event){
+        axios.post('http://localhost:3000/deleteTask',{
+            "task_name": this.getAttribute("id"),
+            
+        })
+        .then(response => console.log(response.data),window.location.reload())
+        .catch(error => console.error('Error:', error));
+    })
+
+
