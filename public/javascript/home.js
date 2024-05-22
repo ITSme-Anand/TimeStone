@@ -1,6 +1,7 @@
 
 var button = document.querySelector(".add-task");
 var taskPopup = document.querySelector(".popup");
+
 button.onclick = ()=>{
     button.style.display = "none";
     taskPopup.style.display = "flex";
