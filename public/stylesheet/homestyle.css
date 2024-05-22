@@ -18,13 +18,27 @@
     color: #0F1035;
 }
 body{
-    background-image: url("../images/conquer.jpg");
+    background-image: url("../images/stars2.jpeg.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.mainSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.addTaskdiv{
+    margin-right: 2em;
+    margin-top: 2em;
 }
 .add-task{
     padding: 10px;

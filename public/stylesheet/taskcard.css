@@ -16,12 +16,14 @@
     padding-left: 0.2em;
     padding-right: 0.2em;
     border-radius: 1em;
+    margin-left: 2em;
 }
 .taskDetails{
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 1em;
 
 }
 .sno{

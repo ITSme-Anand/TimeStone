@@ -15,7 +15,6 @@
 
     </head>
     <body>
-        <%- include('navbar.ejs') %>
         <div class="headerClass" style="background-image">
             <button class="topMenuBtn">
                 <span class="material-symbols-outlined iconColor">
@@ -38,8 +37,9 @@
         </div>
 
         
+        <section class="mainSection">
+            <%- include('navbar.ejs') %>
 
-        <div class="main">
             <div class="taskDetails">
                 <% for (let index = 0; index < taskdetails.length; index++) { %>
                     <% let i = taskdetails[index]; %>
@@ -75,38 +75,35 @@
                 <% } %>
             </div>
         
-            <button class="add-task" onclick="">
-                <span class="material-symbols-outlined">
-                    add
-                </span>
-            </button>
-            <form action="/task" method="post">
-            <div class="popup">
-                <label for="input">enter task</label>
-                <input type="text" class="input" name="taskName">
-                <div class="prioritydiv">
-                    <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
-                    <select class="priority" name="priority" id="priority">
-                        <option value="priority1">priority1</option>
-                        <option value="priority2">priority2</option>
-                        <option value="priority3">priority3</option>
-                    </select>
-                </div>
-                <div class="timediv">
-                    <input type="time" name="startTime" id="startTime">
-                    <p>-</p>
-                    <input type="time" name="endTime" id="endTime">
+            <div class="addTaskdiv">
+                <button class="add-task" onclick="">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                </button>
+                <form action="/task" method="post">
+                <div class="popup">
+                    <label for="input">enter task</label>
+                    <input type="text" class="input" name="taskName">
+                    <div class="prioritydiv">
+                        <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
+                        <select class="priority" name="priority" id="priority">
+                            <option value="priority1">priority1</option>
+                            <option value="priority2">priority2</option>
+                            <option value="priority3">priority3</option>
+                        </select>
+                    </div>
+                    <div class="timediv">
+                        <input type="time" name="startTime" id="startTime">
+                        <p>-</p>
+                        <input type="time" name="endTime" id="endTime">
 
+                    </div>
+                        <input class="addTask" type="submit" value="submit" > </input>
                 </div>
-                <input class="addTask" type="submit" value="submit" >
-                </input>
+                </form>
             </div>
-        </form>
-
-
-
-
-        </div>
+    </section>
         
         <script src="javascript/home.js"></script>
     </body>
