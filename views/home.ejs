@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="stylesheet/homestyle.css">
         <link rel="stylesheet" href="stylesheet/taskcard.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 
     </head>
     <body>
         <%- include('navbar.ejs') %>
-        <div class="headerClass">
+        <div class="headerClass" style="background-image">
             <button class="topMenuBtn">
                 <span class="material-symbols-outlined iconColor">
                     menu
@@ -41,7 +43,19 @@
             <div class="taskDetails">
                 <% for (let index = 0; index < taskdetails.length; index++) { %>
                     <% let i = taskdetails[index]; %>
-                    <div class="taskCard">
+                    <% let taskcolor ; %>
+                    <% if (i.priority == "priority1") { %>
+                        <% taskcolor = "red";%>
+                    <% } %>
+                    <% if (i.priority == "priority2") { %>
+                        <% taskcolor = "yellow";%>
+                    <% } %>
+                    <% if (i.priority == "priority3") { %>
+                        <% taskcolor = "green";%>
+                    <% } %>
+                    <% let taskbg = `background-color : ${taskcolor};` ; %>
+                    
+                    <div class="taskCard" style="<%= taskbg %>">
                         <div class="sno">
                             <h3><%= index + 1 %></h3>
                         </div>

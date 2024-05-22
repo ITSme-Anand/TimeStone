@@ -17,7 +17,9 @@
     justify-content: space-between;
     color: #0F1035;
 }
-
+body{
+    background-image: url("images/conquer.jpg");
+}
 
 .main{
     display: flex;

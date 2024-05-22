@@ -4,6 +4,7 @@
     padding: 0;
 }
 .taskCard{
+    margin-top: 0.5em;
     background-color: chocolate;
     display: flex;
     flex-direction: row;
@@ -14,10 +15,10 @@
     padding-bottom: 0.5em;
     padding-left: 0.2em;
     padding-right: 0.2em;
-    border-radius: 0.5em;
+    border-radius: 1em;
 }
 .taskDetails{
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,20 +29,19 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    border: 1px solid black;
     width: 4%;
     height: 2em;
 }
 .taskName{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 67%;
-    border: 1px solid black;
-    background-color: white;
     height: 2em;
+    font-weight: 300;
+    font-size: 1.25em;
+    font-family: "Poetsen One", sans-serif;
 }
 .time{
     display: flex;
@@ -49,8 +49,6 @@
     justify-content: center;
     align-items: center;
     width:17%;
-    border: 1px solid black;
-    background-color: white;
     height: 2em;
 }
 .checkbox{
@@ -99,6 +97,10 @@
 /* When the checkbox is checked, add a green background */
 .container input:checked ~ .checkmark {
   background-color: rgb(53, 224, 53);
+}
+
+.container input:checked ~ .taskName {
+    text-decoration: line-through;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
