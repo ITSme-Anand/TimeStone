@@ -26,3 +26,5 @@ menuBtn.onclick = ()=>{
 
     
 }
+var Tasks = document.querySelector(".tasks");
+console.log(Tasks)

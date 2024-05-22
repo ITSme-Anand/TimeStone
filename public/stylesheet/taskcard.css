@@ -6,7 +6,7 @@
 .taskCard{
     margin-top: 0.5em;
     display: flex;
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(128,128,128,0.1);
     flex-direction: row;
     justify-content: space-around;
     border:solid black 2px;
@@ -17,6 +17,7 @@
     padding-right: 0.2em;
     border-radius: 1em;
     margin-left: 2em;
+    color: white;
 }
 .taskDetails{
     margin-left: 7%;

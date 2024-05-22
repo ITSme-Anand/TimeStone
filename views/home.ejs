@@ -67,7 +67,7 @@
                         </div>
                         <div class="checkbox">
                             <label class="container">
-                                <input type="checkbox">
+                                <input type="checkbox" name ="<%=i.taskName%>" value="true" class="tasks">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -77,14 +77,17 @@
         
             <div class="addTaskdiv">
                 <button class="add-task" onclick="">
-                    <span class="material-symbols-outlined">
-                        add
-                    </span>
+                    <img src="../public/images/plus.webp" alt="">
+                    <span> Add Task</span>
                 </button>
                 <form action="/task" method="post">
                 <div class="popup">
-                    <label for="input">Enter Task</label>
-                    <input type="text" class="input" name="taskName">
+                    <div>
+                        <label for="input" style="color: whitesmoke;font-size: large;">Enter Task</label>
+                    </div>
+                    <div class="mainSection" style="justify-content: space-around;">
+                        <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
+                    </div>
                     <div class="prioritydiv">
                         <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
                         <select class="priority" name="priority" id="priority">
@@ -97,9 +100,11 @@
                         <input type="time" name="startTime" id="startTime">
                         <p>-</p>
                         <input type="time" name="endTime" id="endTime">
-
                     </div>
+                    <div>
                         <input class="addTask" type="submit" value="Save" > </input>
+                    </div>
+                        
                 </div>
                 </form>
             </div>
