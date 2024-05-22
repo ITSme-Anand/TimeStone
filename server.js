@@ -18,7 +18,13 @@ app.use(session({
     saveUninitialized: false
 }))
 app.set('view engine','ejs');
+// Configure body-parser
 const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+// Define a Task schema-------------------------------------
 const TaskSchema = new mongoose.Schema({
     taskName:{
         type:String,
@@ -42,9 +48,6 @@ const TaskSchema = new mongoose.Schema({
     }
 })
 Task = mongoose.model('Tasks',TaskSchema);
-// Configure body-parser
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 
 app.get('/home', async(req, res) => {
@@ -76,7 +79,8 @@ app.post('/task',async(req,res)=>{
     catch(err){
         console.log(err)
     }
-})
+});
+
 app.post('/UpdateTask', async (req, res) => {
     console.log(req.body);
     const task = req.body.task_name;
@@ -89,6 +93,10 @@ app.post('/UpdateTask', async (req, res) => {
         console.log("Something wrong when updating data!", err);
         res.status(400).send("Error");
     }
+});
+
+app.get('/pomodoro',async(req,res)=>{
+    res.render('pomodoro');
 });
 const userRouter = require('./routes/auth');
 const { type } = require('os');
