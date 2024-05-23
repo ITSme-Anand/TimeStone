@@ -24,6 +24,8 @@ menuBtn.onclick = ()=>{
     else{
         navigationBar.style.display = "none";
     }};
+
+
     var Tasks = document.getElementsByClassName("tasks");
     for (var i = 0; i < Tasks.length; i++) {
         console.log(Tasks[i].getAttribute("name")); // Access the 'name' property using getAttribute
@@ -52,14 +54,17 @@ menuBtn.onclick = ()=>{
         });
     }
 
-    var deleteTaskBtn = document.querySelector('.deleteIcon');
-    deleteTaskBtn.addEventListener('click', function(event){
-        axios.post('http://localhost:3000/deleteTask',{
-            "task_name": this.getAttribute("id"),
-            
+
+    var deleteTaskBtns = document.getElementsByClassName('deleteIcon');
+    for(var i = 0;i<deleteTaskBtns.length;i++){
+        deleteTaskBtns[i].addEventListener('click',function(event){
+            axios.post('http://localhost:3000/deleteTask',{
+                "task_name": this.getAttribute("id"),
+                
+            })
+            .then(response => console.log(response.data),window.location.reload())
+            .catch(error => console.error('Error:', error));
         })
-        .then(response => console.log(response.data),window.location.reload())
-        .catch(error => console.error('Error:', error));
-    })
+    }
 
 
