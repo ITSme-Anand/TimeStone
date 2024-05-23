@@ -19,6 +19,7 @@
     border-radius: 1em;
     margin-left: 2em;
     color: white;
+    width: 100%;
 }
 .taskDetails{
     margin-left: 7%;
@@ -29,12 +30,20 @@
     margin-top: 1em;
 
 }
+.taskWrapDiv{
+  width: 67%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between ;
+  align-items: center;
+
+}
 .sno{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 4%;
+    width: 6%;
     height: 2em;
 }
 .taskName{
@@ -42,32 +51,50 @@
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    width: 63%;
+    width: 96%;
     height: 2em;
     font-size: 1.25em;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
 }
+.wrapDiv{
+  width: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .time{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    width:17%;
+    width:70%;
     height: 2em;
+    text-align: left;
+}
+.check_delete_wrap{
+  width: 30%;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
 }
 .checkbox{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 4%;
+    width: 50%;
     height: 2em;
 }
 
 .deleteIcon{
-  width: 4%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .deleteIcon:hover{
@@ -118,7 +145,9 @@
 /* When the checkbox is checked, add a green background */
 .container input:checked ~ .checkmark {
   background-color: rgb(53, 224, 53);
+  
 }
+
 
 .container input:checked ~ .taskName {
     text-decoration: line-through;
@@ -143,10 +172,34 @@
   top: 0.3em;
   width: 20%;
   height: 40%;
-  border-right: solid white 1px;
-  border-bottom: solid white 1px;
+  border-right: solid black 1px;
+  border-bottom: solid black 1px;
   border-width: 0 0.2em 0.2em 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+
+@media screen and (max-width: 1175px) {
+  .taskCard{
+    flex-direction: column;
+  }
+  .taskWrapDiv{
+    width: 100%;
+    justify-content: center;
+  }
+  .sno{
+    justify-content: center;
+  }
+  .taskName{
+    justify-content: center;
+  }
+  .wrapDiv{
+    width: 100%;
+    flex-direction: column;
+  }
+  .time{
+    justify-content: center;
+  }
 }
