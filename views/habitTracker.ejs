@@ -32,16 +32,18 @@
                                 <% let day = days[i] ; %>
                                 <% if (day!=null) { %>
                                     <% let status = habit.status[i]; %>
+                                    <% let taskdone = "dangerous";%>
                                     <% let statusClass = 'incompleteHabits'; %>
                                     <% if (status=="completed") { %>
                                         <% statusClass = 'completedHabits'; %>
+                                        <% taskdone = "check"; %>
                                     <% } %>
                                     <% let habitClasses = `habitGridItems ${day}GridItems ${statusClass}` ; %>
                                     <% let habitNameDay = `${habitName}-${day}-${status}`%>
                                     <% console.log(habitClasses); %>
                                     <div class="<%= habitClasses%>" style="<%= habitRow %> ">
                                         <button class="habitDoneButton" id="<%= habitNameDay%>">
-                                            <span class="material-symbols-outlined"> Task </span>
+                                            <span class="material-symbols-outlined"> <%=taskdone%> </span>
                                         </button>
                                     </div>
                                 <% } %>

@@ -37,13 +37,7 @@ for(var i=0;i<HabitDoneButtons.length;i++){
         let habitName = l[0];
         let status = l[2]
         console.log(habitName)
-        console.log(day)
-        if(status=="completed"){
-            this.parentNode.style.backgroundColor = "rgb(185, 45, 45)";
-        }
-        else{
-            this.parentNode.style.backgroundColor = "green";
-        }
+        console.log(day);
         axios.post('http://localhost:3000/UpdateHabit', {
                     "habitName": habitName,
                     "day": day

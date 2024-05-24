@@ -39,7 +39,7 @@
 }
 
 .topMenuBtn{
-    background-color: rgba(255, 255, 255, 0.834);
+    background-color: rgba(255, 255, 255, 0.827);
 }
 
 .topMenuBtn:hover{
@@ -73,13 +73,18 @@
     z-index: 10;
     list-style: none;
     font-family:fantasy;
-    font-weight: 400;
+    font-weight:lighter;
     letter-spacing: 0.1em;
     width: 100%;
     font-size: 120%;
     height: 3em;   
     border-radius: 2em;
     color: white;
+}
+
+.feature li{
+    font-weight: lighter;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .textcenterProp{

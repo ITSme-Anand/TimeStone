@@ -4,56 +4,68 @@
     box-sizing: border-box;
 }
 html{
-    background-image: url('../images/stars2.jpeg.jpg');
+    height:max-content;
+    background-image: url('../images/planet.jpeg.jpg');
     background-repeat: none;
     background-size: cover;
 }
 .mainSection{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  height: max-content;
+  display: grid;
+  grid-template-columns: 20% 67% 13%;
   width: 100%;
+  justify-content: center;
   
 }
+.navBar{
+  grid-column-start: 1;
+  width: 100%;
+}
 .HabitTrackerDiv{
-    width: 70%;
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
+  height: 100%;
+    width: 100%;
+    display: block;
+    grid-column-start: 2;
+    border-radius: 1em;
+    margin-left: 0.5%;
 }
 .HabitGrid{
+    color: white;
     display: grid;
     width: 100%;
     grid-template-columns: auto auto auto auto auto auto auto auto;
     text-align: center;
-    column-gap: 1%;
-    row-gap: 5%;
+    margin-top: 2em;
+    border-radius: 1em;
+    border:solid 1px rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.074);
+    
 }
 
 .headerGridItems{
     height: fit-content;
-    background-color: lightblue;
-    border: 1px solid rgba(0, 0, 0, 0.486);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.486);
 }
 
 
 .habitFeatures{
-    width: 10%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border: white;
+    grid-column-start: 3;
 }
 
 .habitAddButton{
-    padding: 0.3em;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-size: larger;
     border-radius: 2em;
+    padding: 1em;
 }
 
 .addHabit{
@@ -201,13 +213,14 @@ html{
   .habitGridItems{
     display: flex;
     height: fit-content;
-    background-color: lightblue;
-    border: 1px solid rgba(0, 0, 0, 0.486);
+    
+    border-right: 1px solid rgba(255, 255, 255, 0.486);
     grid-column-start: 1;
     padding-top: 1em;
     padding-bottom: 1em;
     justify-content: center;
     align-items: center;
+    
   }
 
   .MonGridItems{
@@ -233,10 +246,12 @@ html{
     grid-column-start: 8;
   }
   .completedHabits{
-    background-color: green;
+    border: none;
+    background-color: rgba(0, 128, 0, 0);
   }
   .incompleteHabits{
-    background-color: rgb(185, 45, 45);
+    border: none;
+    background-color: rgba(185, 45, 45, 0);
   }
   .habitDoneButton{
     height: fit-content;
@@ -245,9 +260,9 @@ html{
     justify-content: center;
     align-items: center;
     font-size: larger;
-    border-radius: 2em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    border-radius: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
   .habitDoneButton:hover{
     cursor: pointer;
