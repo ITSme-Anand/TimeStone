@@ -91,7 +91,6 @@ app.get('/home', async(req, res) => {
         res.redirect('/auth/login');
     }*/
     var taskdetails = await Task.find();
-    console.log(taskdetails)
     res.render('home',{taskdetails:taskdetails});
 });
 
@@ -184,6 +183,31 @@ app.post('/updateHabit',async (req,res)=>{
     
 })
 
+app.get('/pomodoro',async(req,res)=>{
+    res.render('pomodoro');
+})
+app.get('/scheduler',async(req,res)=>{
+    const Taskinfo = await Task.find();
+
+    res.render('scheduler',{Tasks: Taskinfo});
+})
+app.post('/scheduler/UpdateTask',async(req,res)=>{
+    console.log(req.body);
+    const original_task = req.body.OriginalTaskName;
+    const task = req.body.taskName;
+    const startTime = req.body.startTime;
+    const endTime = req.body.endTime;
+    console.log(task,startTime,endTime)
+    try {
+        const doc = await Task.findOneAndUpdate({taskName: original_task}, {taskName:task,startTime: startTime,endTime:endTime});
+        console.log(doc);
+        res.redirect('/scheduler');
+    } catch (err) {
+        console.log("Something wrong when updating data!", err);
+        res.status(400).send("Error");
+    }
+})
+
 app.post('/deleteTask', async(req,res)=>{
     console.log(req.body);
     const task = req.body.task_name;
@@ -201,39 +225,6 @@ app.post('/deleteTask', async(req,res)=>{
         res.status(400).send("Error");
     }
 })
-
-app.post('/habit',async(req,res)=>{
-    const habit = new Habit(
-        {
-            habitName: req.body.habitName,
-            startTime: req.body.startTime,
-            endTime: req.body.endTime,
-            Days: [req.body.Mon , req.body.Tue , req.body.Wed , req.body.Thu , req.body.Fri, req.body.Sat, req.body.Sun]
-
-        }
-    );
-    console.log(req.body);
-    try{
-        const newHabit = await habit.save();
-        res.redirect("/habitTracker");
-    }
-    catch(err){
-        console.log(err);
-    }
-})
-
-app.get('/habitTracker',async(req,res)=>{
-
-    var habitDetails = await Habit.find();
-    res.render('habitTracker',{habitDetails:habitDetails});
-
-})
-
-
-
-
-
-
 const userRouter = require('./routes/auth');
 const { type } = require('os');
 app.use('/auth',userRouter);

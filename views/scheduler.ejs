@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheet/scheduler.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeStone</title>
+</head>
+<body>
+    </div>
+    <div class="Tasks">
+        <%for(let i=0 ;i<Tasks.length;i++){%>
+            <div class="task" data-task-name="<%=Tasks[i].taskName%>" data-start-time="<%=Tasks[i].startTime%>" data-end-time="<%=Tasks[i].endTime%>">
+            </div>
+    <%}%>
+    <form action="/scheduler/UpdateTask" method="post">
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-head">
+                <span class="close">&times;</span>
+                <h2>Edit Event</h2>
+                <div></div>
+            </div>
+            <div class="taskName">
+                <div class="Taskinput">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" required>
+            </div>
+            </div>
+            <div class="times">
+                <div class="startTime">
+                    <label for="startTime">Start Time:</label>
+                    <input type="time" id="startTime" name="startTime" required>
+                </div>
+                <div class="endTime">
+                    <label for="endTime">End Time:</label>
+                    <input type="time" id="endTime" name="endTime" required>
+                </div>
+            </div>
+            <div class="updateButton">
+                <input type="submit" class="UpdateEvent" value="Update Event"></input>
+            </div>
+        </div>
+    </div>
+    <form action="/task" method="post">
+        <div class="popup">
+            <div>
+                <label for="input" class="EnterTaskPrompt">Enter Task</label>
+            </div>
+            <div class="mainSection" style="justify-content: space-around;">
+                <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
+            </div>
+            <div class="prioritydiv">
+                <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
+                <select class="priority" name="priority" id="priority">
+                    <option value="priority1">priority1</option>
+                    <option value="priority2">priority2</option>
+                    <option value="priority3">priority3</option>
+                </select>
+            </div>
+            <div class="timediv">
+                <input type="time" name="startTime" id="startTime">
+                <p>-</p>
+                <input type="time" name="endTime" id="endTime">
+            </div>
+            <div>
+                <input class="addTask" type="submit" value="Save" > </input>
+            </div>
+                
+        </div>
+        </form>
+    </form>
+    <div class="mainDiv">
+        <div class="timings">
+        </div>
+        <div class="schedule">
+        </div>
+    </div>
+
+</body>
+    <script src="javascript/scheduler.js"></script>
+</html>
