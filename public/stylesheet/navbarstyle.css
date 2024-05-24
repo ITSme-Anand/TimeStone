@@ -88,6 +88,17 @@
     align-items: center;
     justify-content: center;
 }
+
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color:black;
+}
+
 .feature:hover{
     background-color: #7FC7D9;
     color: black;

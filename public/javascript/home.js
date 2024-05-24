@@ -23,7 +23,8 @@ menuBtn.onclick = ()=>{
     }
     else{
         navigationBar.style.display = "none";
-    }};
+    }
+};
 
 
     var Tasks = document.getElementsByClassName("tasks");
