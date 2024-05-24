@@ -91,6 +91,7 @@ app.get('/home', async(req, res) => {
         res.redirect('/auth/login');
     }*/
     var taskdetails = await Task.find();
+    console.log(taskdetails)
     res.render('home',{taskdetails:taskdetails});
 });
 
@@ -183,6 +184,51 @@ app.post('/updateHabit',async (req,res)=>{
     
 })
 
+app.post('/deleteTask', async(req,res)=>{
+    console.log(req.body);
+    const task = req.body.task_name;
+    console.log(task)
+    try{
+        const doc = await Task.findOneAndDelete(
+            {"taskName":task}
+        )
+        console.log(doc);
+        res.status(200).send("updated");
+        
+    }
+    catch(err){
+        console.log("Something wrong when deleting data!", err);
+        res.status(400).send("Error");
+    }
+})
+
+app.post('/habit',async(req,res)=>{
+    const habit = new Habit(
+        {
+            habitName: req.body.habitName,
+            startTime: req.body.startTime,
+            endTime: req.body.endTime,
+            Days: [req.body.Mon , req.body.Tue , req.body.Wed , req.body.Thu , req.body.Fri, req.body.Sat, req.body.Sun]
+
+        }
+    );
+    console.log(req.body);
+    try{
+        const newHabit = await habit.save();
+        res.redirect("/habitTracker");
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
+app.get('/habitTracker',async(req,res)=>{
+
+    var habitDetails = await Habit.find();
+    res.render('habitTracker',{habitDetails:habitDetails});
+
+})
+
 app.get('/pomodoro',async(req,res)=>{
     res.render('pomodoro');
 })
@@ -208,24 +254,13 @@ app.post('/scheduler/UpdateTask',async(req,res)=>{
     }
 })
 
-app.post('/deleteTask', async(req,res)=>{
-    console.log(req.body);
-    const task = req.body.task_name;
-    console.log(task)
-    try{
-        const doc = await Task.findOneAndDelete(
-            {"taskName":task}
-        )
-        console.log(doc);
-        res.status(200).send("updated");
-        
-    }
-    catch(err){
-        console.log("Something wrong when deleting data!", err);
-        res.status(400).send("Error");
-    }
-})
+
+
+
+
+
 const userRouter = require('./routes/auth');
 const { type } = require('os');
 app.use('/auth',userRouter);
 app.listen(3000);
+
