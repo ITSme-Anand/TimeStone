@@ -61,6 +61,7 @@ app.get('/home', async(req, res) => {
 });
 
 app.post('/task',async(req,res)=>{
+    console.log(req.body)
     const task = new Task(
      {
         taskName:req.body.taskName,
@@ -69,7 +70,6 @@ app.post('/task',async(req,res)=>{
         endTime:req.body.endTime
     }
         );
-    console.log(req.body);
     try {
         const newTask = await task.save();
         //res.status(201).json(newTask);
