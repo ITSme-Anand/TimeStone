@@ -8,7 +8,6 @@
     <title>TimeStone</title>
 </head>
 <body>
-    </div>
     <div class="Tasks">
         <%for(let i=0 ;i<Tasks.length;i++){%>
             <div class="task" data-task-name="<%=Tasks[i].taskName%>" data-start-time="<%=Tasks[i].startTime%>" data-end-time="<%=Tasks[i].endTime%>">
@@ -25,17 +24,17 @@
             <div class="taskName">
                 <div class="Taskinput">
                 <label for="taskName">Task Name:</label>
-                <input type="text" id="taskName" name="taskName" required>
+                <input type="text" id="taskName" name="taskName" >
             </div>
             </div>
             <div class="times">
                 <div class="startTime">
                     <label for="startTime">Start Time:</label>
-                    <input type="time" id="startTime" name="startTime" required>
+                    <input type="time" id="startTime" name="startTime" >
                 </div>
                 <div class="endTime">
                     <label for="endTime">End Time:</label>
-                    <input type="time" id="endTime" name="endTime" required>
+                    <input type="time" id="endTime" name="endTime">
                 </div>
             </div>
             <div class="updateButton">
@@ -43,13 +42,17 @@
             </div>
         </div>
     </div>
+    </form>
     <form action="/task" method="post">
-        <div class="popup_addTask">
-            <div>
-                <label for="input" class="EnterTaskPrompt">Enter Task</label>
+        <div class="popup2">
+            <div class="popup-header">
+                <span class="addTask_close">&times;</span>
+                <h2>Add Event</h2>
+                <div></div>
             </div>
-            <div class="mainSection" style="justify-content: space-around;">
-                <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
+            <div class="taskName">
+                    <label for="input" class="EnterTaskPrompt">Enter Task</label>
+                    <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
             </div>
             <div class="prioritydiv">
                 <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>

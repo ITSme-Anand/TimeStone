@@ -20,11 +20,23 @@ function hour(label){
     timeline2.classList.add('halfhour');
     timeline2.id = label+':30';
 
+    timeline1.addEventListener('click', () => {
+        popup2.style.display = 'flex';
+        popup2.querySelector('input[name="startTime"]').value = `${label}:00`;
+        popup2.querySelector('input[name="endTime"]').value = `${label+1}:00`;
+    }
+    );
+    timeline2.addEventListener('click', () => {
+        popup2.style.display = 'flex';
+        popup2.querySelector('input[name="startTime"]').value = `${label}:30`;
+        popup2.querySelector('input[name="endTime"]').value = `${label+1}:00`;
+    });
     schedule.appendChild(timeline1);
     schedule.appendChild(timeline2);
 }
 for(let i=0;i<24;i++){
-    hour(i);
+    const hourLabel = i.toString().padStart(2, '0');
+    hour(hourLabel);
 }
 const now = new Date();
 const currentHour = now.getHours();
@@ -59,9 +71,16 @@ schedule.appendChild(line);
 const tasks = document.querySelectorAll('.task');
 const close = document.querySelector('.close');
 var popup = document.querySelector('.popup');
+var popup2 = document.querySelector('.popup2');
+console.log(popup2);
+const closeBtn = document.querySelector('.addTask_close');
 popup.style.display = 'none';
+popup2.style.display = 'none';
 close.addEventListener('click', () => {
     popup.style.display = 'none';
+})
+closeBtn.addEventListener('click', () => {
+    popup2.style.display = 'none';
 })
 
 tasks.forEach(task => {

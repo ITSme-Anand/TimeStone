@@ -61,7 +61,7 @@ html{
 .halfhour:hover{
     background-color: darkgrey;
 }
-.popup{
+.popup, .popup2{
     position:fixed;
     top: 50%;
     left: 50%;
@@ -73,6 +73,7 @@ html{
     justify-content: center;
     align-items: center;
     padding: 1em;
+    z-index: 1; /* Add this line */
 }
 .popup input{
     width: 100%;
@@ -80,13 +81,13 @@ html{
     border-radius: 0.5em;
     text-align: center;
 }
-.popup-head{
+.popup-head, .popup-header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
 }
-.UpdateEvent{
+.UpdateEvent, .addTask{
     padding: 0.5em;
     background-color: #4CAF50;
     color: white;
@@ -110,13 +111,13 @@ html{
     width: 100%;
 }
 
-.times{
+.times,.timediv{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
 }
-.Taskinput{
+.Taskinput, .taskName{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,5 +129,12 @@ html{
     align-items: center;
     justify-content: center;
     width: 100%;
-    
+
+}
+.prioritydiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
