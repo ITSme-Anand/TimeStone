@@ -9,36 +9,49 @@ html{
     background-repeat: none;
     background-size: cover;
 }
+
 .mainSection{
   height: max-content;
   display: grid;
-  grid-template-columns: 20% 67% 13%;
+  grid-template-columns: 0% 62% 38%;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   
 }
-.navBar{
-  grid-column-start: 1;
-  width: 100%;
-}
+
 .HabitTrackerDiv{
+  background-color: rgba(255, 255, 255, 0.074);
+  margin-top: 2em;
+  border:solid 1px rgb(255, 255, 255);
+  overflow-x:auto;
   height: 100%;
-    width: 100%;
+    width: 80%;
     display: block;
     grid-column-start: 2;
     border-radius: 1em;
-    margin-left: 0.5%;
+}
+
+
+.HabitTrackerDiv::-webkit-scrollbar {
+  height: 10px; 
+}
+
+.HabitTrackerDiv::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px; 
+}
+
+.HabitTrackerDiv::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 .HabitGrid{
+  min-width: 400px;
     color: white;
     display: grid;
     width: 100%;
     grid-template-columns: auto auto auto auto auto auto auto auto;
     text-align: center;
-    margin-top: 2em;
     border-radius: 1em;
-    border:solid 1px rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.074);
     
 }
 
@@ -53,7 +66,7 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items:start;
     border: white;
     grid-column-start: 3;
 }
@@ -78,7 +91,7 @@ html{
 
 .HabitPopUp{
     height: fit-content;
-    width:11em;
+    width:100%;
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -268,3 +281,93 @@ html{
     cursor: pointer;
 
   }
+
+
+  @media screen and (max-width: 1360px){
+    
+  }
+  
+
+
+  @media screen and (max-width: 1150px){
+    .habitAddButton{
+      font-size:large;
+      border-radius: 2em;
+      padding: 0.5em;
+  }
+  }
+
+  @media screen and (max-width: 800px){
+
+    .habitAddButton{
+      font-size:medium;
+      border-radius: 2em;
+      padding: 0.5em;
+    }
+
+    
+
+    .HabitPopUp{
+      height: fit-content;
+      width:90%;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1em;
+      border-radius: 2em;
+  }
+    .AddHabitPrompt{
+        font-size:small;
+    }
+    .HabitInputDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .Habitinput{
+        height: 3em;
+        margin-top: 0.5em;
+        width: 80%;
+        border-radius: 0.5em;
+        text-align: center;
+    }
+    .timediv{
+        display: flex;
+        flex-direction: row;
+        margin-top: 0.5em ;
+        justify-content: center;
+    }
+    #startTime{
+        width:25%;
+    }
+    #endTime{
+      width:25%;
+    }
+    
+    .daysDiv{
+        margin-top: 0.5em;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        font-size: small;
+    }
+    
+    .HabitSaver{
+        height: 3em;
+        padding-left: 1em;
+        padding-right: 1em;
+        border-radius: 1.5em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        cursor: pointer;
+        font-size:small;
+        width: 100%;
+    }
+
+
+  }
+
+
+

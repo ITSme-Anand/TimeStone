@@ -1,14 +1,24 @@
 let menuBtn = document.querySelector(".topMenuBtn");
 menuBtn.addEventListener('click',function(event){
     var navigationBar = document.querySelector(".navigation");
+    let HabitTrackerDiv = document.querySelector(".HabitTrackerDiv");
+    let mainSection = document.querySelector(".mainSection");
+    let featureBar = document.querySelector(".habitFeatures");
     console.log(navigationBar);
     var displayNav = navigationBar.getAttribute("style");
     console.log(displayNav.endsWith("none;"))
     if(displayNav.endsWith("none;")){
         navigationBar.style.display = "block";
+        HabitTrackerDiv.style.width = '100%';
+        mainSection.style.gridTemplateColumns = "20% 48% 32%";
+        featureBar.style.alignItems = "center";
+        
     }
     else{
         navigationBar.style.display = "none";
+        HabitTrackerDiv.style.width = '100%';
+        mainSection.style.gridTemplateColumns = "0% 62% 38%";
+        featureBar.style.alignItems = "center";
     }
 })
 
