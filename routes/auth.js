@@ -18,15 +18,18 @@ router.use(session({
 router.post('/login/post', async (req, res) => {
     console.log(req.body);
     var user = await User.getUser(req.body.username, req.body.password);
-    if (user.status == 'correct password') {
+    console.log(user.status);
+    if (user.status == 200) {
         req.session.isAuth = true;
         req.session.save(); // Add this line to save the session changes
         res.redirect(301, '/home');
         return;
-    } else if (user.status == 'wrong password') {
+    } else if (user.status == 400) {
+        alert("Invalid Password");
         res.redirect('/auth/login');
         return;
     } else {
+        alert("User not found");
         res.redirect('/auth/register');
         return;
     }
@@ -45,7 +48,7 @@ router.post('/register/post',(req,res)=>{
     console.log(req.body);
     user1 = new User(req.body.username,req.body.password);
     user1.save();
-    res.send('registered');
+    res.redirect('/auth/login');
 })
 router.get('/register',(req,res)=>{
     res.render('register')
