@@ -30,7 +30,7 @@ module.exports = class User{
             return {status:400};
         }
         if(!usr){
-            return {status:400};
+            return {status:404};
         }
     }
 

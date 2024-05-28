@@ -5,24 +5,31 @@ var path = require('path');
 
 require('dotenv').config()
 PORT = 3000
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+
+const store = new MongoDBStore({
+  uri: 'mongodb://localhost:27017/sessions',
+  collection: 'mySessions',
+});
+
+app.use(session({
+  secret: 'secret key',
+  resave: false,
+  saveUninitialized: false,
+  store: store,
+}));
 
 mongoose.connect(process.env.MONGO_URL)
 const db = mongoose.connection
 db.on('error',(error)=>{console.log(error)})
 db.once('open',()=>{console.log("Connected to Database");})
 app.use(express.static(path.join(__dirname,'public')));
-const session = require('express-session');
-app.use(session({
-    secret: 'secret key',
-    resave:false,
-    saveUninitialized: false
-}))
 app.set('view engine','ejs');
 // Configure body-parser
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 
 // Define a Task schema-------------------------------------
 const TaskSchema = new mongoose.Schema({
@@ -85,14 +92,14 @@ Habit = mongoose.model('Habits',HabitSchema);
 
 
 app.get('/home', async(req, res) => {
-    /*if (req.session.isAuth) {
-        res.render('home');
+    if (req.session.isAuth) {
+        var taskdetails = await Task.find();
+        console.log(taskdetails)
+        res.render('home',{taskdetails:taskdetails});
     } else {
         res.redirect('/auth/login');
-    }*/
-    var taskdetails = await Task.find();
-    console.log(taskdetails)
-    res.render('home',{taskdetails:taskdetails});
+    }
+    
 });
 
 app.post('/task',async(req,res)=>{
