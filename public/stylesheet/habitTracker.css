@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height:max-content;
+    background-image: url('../images/clocksy\ \(2\).jpeg');
+    background-repeat: none;
+    background-size: cover;
+}
+.mainSection{
+  height: max-content;
+  display: grid;
+  grid-template-columns: 20% 67% 13%;
+  width: 100%;
+  justify-content: center;
+  
+}
+.navBar{
+  grid-column-start: 1;
+  width: 100%;
+}
+.HabitTrackerDiv{
+  height: 100%;
+    width: 100%;
+    display: block;
+    grid-column-start: 2;
+    border-radius: 1em;
+    margin-left: 0.5%;
+}
+.HabitGrid{
+    color: white;
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    text-align: center;
+    margin-top: 2em;
+    border-radius: 1em;
+    border:solid 1px rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.074);
+    
+}
+
+.headerGridItems{
+    height: fit-content;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.486);
+}
+
+
+.habitFeatures{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: white;
+    grid-column-start: 3;
+}
+
+.habitAddButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: larger;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.addHabit{
+    margin-top: 2em;
+}
+.habitAddButton:hover{
+    background-color: rgba(180, 180, 180, 0.737);
+    cursor: pointer;
+}
+
+.HabitPopUp{
+    height: fit-content;
+    width:11em;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255,0.1);
+    padding-top: 1em;
+    border-radius: 2em;
+    border: #ffffff solid 2px;
+    color: white;
+}
+.AddHabitPrompt{
+    color: whitesmoke;
+    font-size: large;
+}
+.HabitInputDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.Habitinput{
+    height: 3em;
+    margin-top: 1.5em;
+    width: 80%;
+    border-radius: 1em;
+    text-align: center;
+}
+.timediv{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5em ;
+}
+
+.daysDiv{
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.HabitSaver{
+    height: 3em;
+    background-color: rgba(0, 0, 139, 0.656);
+    color: white;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-radius: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    width: 100%;
+}
+
+/*styling for the checkbox*/
+
+/* The container */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    display:block;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    display: block;
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a green background */
+  .container input:checked ~ .checkmark {
+    background-color: rgb(53, 224, 53);
+    
+  }
+  
+  
+  .container input:checked ~ .taskName {
+      text-decoration: line-through;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    display: block;
+    position: relative;
+    left: 0.5em;
+    top: 0.3em;
+    width: 20%;
+    height: 40%;
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+    border-width: 0 0.2em 0.2em 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+  /*styling the habits*/
+  .habitGridItems{
+    display: flex;
+    height: fit-content;
+    
+    border-right: 1px solid rgba(255, 255, 255, 0.486);
+    grid-column-start: 1;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .MonGridItems{
+    grid-column-start: 2;
+    
+  }
+  .TueGridItems{
+    grid-column-start: 3;
+  }
+  .WedGridItems{
+    grid-column-start: 4;
+  }
+  .ThuGridItems{
+    grid-column-start: 5;
+  }
+  .FriGridItems{
+    grid-column-start: 6;
+  }
+  .SatGridItems{
+    grid-column-start: 7;
+  }
+  .SunGridItems{
+    grid-column-start: 8;
+  }
+  .completedHabits{
+    border: none;
+    background-color: rgba(0, 128, 0, 0);
+  }
+  .incompleteHabits{
+    border: none;
+    background-color: rgba(185, 45, 45, 0);
+  }
+  .habitDoneButton{
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    border-radius: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .habitDoneButton:hover{
+    cursor: pointer;
+
+  }
