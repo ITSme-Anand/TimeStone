@@ -12,46 +12,47 @@
             <%- include('navbar.ejs') %>
             
             <div class="HabitTrackerDiv">
-                <div class="HabitGrid">
-                    <div class="headerGridItems"><h2>habits</h2></div>
-                    <div class="headerGridItems"><h2>Mon</h2></div>
-                    <div class="headerGridItems"><h2>Tue</h2></div>
-                    <div class="headerGridItems"><h2>Wed</h2></div>
-                    <div class="headerGridItems"><h2>Thu</h2></div>
-                    <div class="headerGridItems"><h2>Fri</h2></div>
-                    <div class="headerGridItems"><h2>Sat</h2></div>
-                    <div class="headerGridItems"><h2>Sun</h2></div>
-                    <% for( let index = 0; index < habitDetails.length; index++ ) { %>
-
-                        <% let habit = habitDetails[index]; %>
-                        <% let habitName = habit.habitName; %>
-                        <div class="habitGridItems"> <h2> <%= habitName %>  </h2></div>
-                        <% let habitClasses = "habitGridItems "; %>
-                        <% let days = habit.Days ; %>
-                        <% let habitRow = `grid-row-start: ${index + 2};`; %>
-                        <% for( let i = 0; i < days.length; i++ ) { %>
-                                <% let day = days[i] ; %>
-                                <% if (day!=null) { %>
-                                    <% let status = habit.status[i]; %>
-                                    <% let taskdone = "dangerous";%>
-                                    <% let statusClass = 'incompleteHabits'; %>
-                                    <% if (status=="completed") { %>
-                                        <% statusClass = 'completedHabits'; %>
-                                        <% taskdone = "check"; %>
+                <div class="habitGridContainer">
+                    <div class="HabitGrid">
+                        <div class="headerGridItems"><h2>habits</h2></div>
+                        <div class="headerGridItems"><h2>Mon</h2></div>
+                        <div class="headerGridItems"><h2>Tue</h2></div>
+                        <div class="headerGridItems"><h2>Wed</h2></div>
+                        <div class="headerGridItems"><h2>Thu</h2></div>
+                        <div class="headerGridItems"><h2>Fri</h2></div>
+                        <div class="headerGridItems"><h2>Sat</h2></div>
+                        <div class="headerGridItems"><h2>Sun</h2></div>
+                        <% for( let index = 0; index < habitDetails.length; index++ ) { %>
+    
+                            <% let habit = habitDetails[index]; %>
+                            <% let habitName = habit.habitName; %>
+                            <div class="habitGridItems"> <h2> <%= habitName %>  </h2></div>
+                            <% let habitClasses = "habitGridItems "; %>
+                            <% let days = habit.Days ; %>
+                            <% let habitRow = `grid-row-start: ${index + 2};`; %>
+                            <% for( let i = 0; i < days.length; i++ ) { %>
+                                    <% let day = days[i] ; %>
+                                    <% if (day!=null) { %>
+                                        <% let status = habit.status[i]; %>
+                                        <% let taskdone = "dangerous";%>
+                                        <% let statusClass = 'incompleteHabits'; %>
+                                        <% if (status=="completed") { %>
+                                            <% statusClass = 'completedHabits'; %>
+                                            <% taskdone = "check"; %>
+                                        <% } %>
+                                        <% let habitClasses = `habitGridItems ${day}GridItems ${statusClass}` ; %>
+                                        <% let habitNameDay = `${habitName}-${day}-${status}`%>
+                                        <% console.log(habitClasses); %>
+                                        <div class="<%= habitClasses%>" style="<%= habitRow %> ">
+                                            <button class="habitDoneButton" id="<%= habitNameDay%>">
+                                                <span class="material-symbols-outlined"> <%=taskdone%> </span>
+                                            </button>
+                                        </div>
                                     <% } %>
-                                    <% let habitClasses = `habitGridItems ${day}GridItems ${statusClass}` ; %>
-                                    <% let habitNameDay = `${habitName}-${day}-${status}`%>
-                                    <% console.log(habitClasses); %>
-                                    <div class="<%= habitClasses%>" style="<%= habitRow %> ">
-                                        <button class="habitDoneButton" id="<%= habitNameDay%>">
-                                            <span class="material-symbols-outlined"> <%=taskdone%> </span>
-                                        </button>
-                                    </div>
-                                <% } %>
+                            <% } %>
                         <% } %>
-                    <% } %>
-                </div>
-                
+                    </div>
+                </div> 
                 
             </div>
             <div class="habitFeatures">

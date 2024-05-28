@@ -20,28 +20,30 @@ html{
 }
 
 .HabitTrackerDiv{
-  background-color: rgba(255, 255, 255, 0.074);
   margin-top: 2em;
-  border:solid 1px rgb(255, 255, 255);
-  overflow-x:auto;
   height: 100%;
     width: 80%;
     display: block;
     grid-column-start: 2;
-    border-radius: 1em;
 }
 
+.habitGridContainer{
+  background-color: rgba(255, 255, 255, 0.074);
+  border:solid 1px rgb(255, 255, 255);
+  overflow-x:auto;
+  border-radius: 1em;
+}
 
-.HabitTrackerDiv::-webkit-scrollbar {
+.habitGridContainer::-webkit-scrollbar {
   height: 10px; 
 }
 
-.HabitTrackerDiv::-webkit-scrollbar-thumb {
+.habitGridContainer::-webkit-scrollbar-thumb {
   background: #888; 
   border-radius: 10px; 
 }
 
-.HabitTrackerDiv::-webkit-scrollbar-thumb:hover {
+.habitGridContainer::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 .HabitGrid{
@@ -66,7 +68,7 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items:start;
+    align-items:center;
     border: white;
     grid-column-start: 3;
 }
