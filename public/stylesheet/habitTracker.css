@@ -6,8 +6,11 @@
 html{
     height:max-content;
     background-image: url('../images/clocksy\ \(2\).jpeg');
-    background-repeat: none;
-    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+
 }
 
 .mainSection{

@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    background-color: black;
+    background-image: url("../images/welcomeBH.jpeg");
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.751);
+}
+.header{
+    height: 3.5em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.headerName{
+    margin-left: 5%;
+}
+.headerButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-right: 3%;
+}
+
+.Login-Button{
+    font-weight: bold;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.086);
+    padding-left: 1em;
+    padding-right:1em;
+    border-radius: 0.5em;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Login-Button:hover{
+    background-color: rgb(0, 99, 174);
+    cursor: pointer;
+}
+
+.Register-Button{
+    width: 70%;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.086);
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Register-Button:hover{
+    cursor: pointer;
+    background-color: rgb(209, 0, 0);
+}
+.welcome-box{
+    text-align: center ;
+    margin-top: 20em;
+    color: white;
+    font-family: "Abel", sans-serif;
+    margin-bottom: 7em;
+
+}
+
+.firstLine{
+    font-size: 2.5em;
+}
+.secondLine{
+    font-size: 4em;
+    margin-bottom: 0.1em;
+    font-family: "Lobster", sans-serif;
+  font-optical-sizing: auto;
+    letter-spacing: 0.1em;
+    color: rgb(0, 166, 255);
+}
+.thirdLine{
+    font-size: 3em;
+    margin-bottom: 0.1em;
+}
+.fourthLine{
+    font-size: 2em;
+}
+
+.featuresDiv{
+    margin-top: 2em;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.feature{
+    height: 40em;
+    border: rgb(0, 153, 255) 10px;
+    border-style:solid;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 2em;
+    margin-bottom: 2em;
+}
+.featureheading{
+    background-color: rgba(255, 255, 255, 0.127);
+    font-family: "Abel", sans-serif;
+    font-size: xx-large;
+}
+.featurebody{
+    margin-top: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family:"Abel", sans-serif ;
+}
+
+
+.featurebody img{
+    margin-top: 2em;
+    border-radius: 3em;
+    border:solid white 2px;
+}
+
+.featureimg{
+    height: 30%;
+}
+.featureDesc{
+    margin-top:3em;
+    width: 50%;
+    font-size: xx-large;
+}
+.getStartedDiv{
+    margin-top: 2em;
+}
+.getStartedButton{
+    background-color: red;
+    padding-left:2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom:1em;
+    border-radius: 1.1em;
+    font-size: x-large;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.getStartedButton:hover{
+    cursor: pointer;
+    background-color: rgb(179, 0, 0);
+}
+@media screen and (max-width: 800px) {
+    .featurebody{
+        margin-top: 2em;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .featureDesc{
+        margin-top: 1em;
+        font-size: larger;
+    }
+    .featurebody div img{
+        margin-top: 0;
+
+    }
+    .featurebody img{
+        height: 30%;
+    }
+
+}
+footer{
+    margin-top: 10em;
+    display: grid;
+    grid-template-columns:30% 40% 30%;
+    font-family:"Abel", sans-serif ;
+    color: white;
+    background-image: url("../images");
+    height:max-content;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    margin-bottom: 0;
+}
+
+.footer1{
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    text-align: justify;
+    text-decoration: underline;
+    background-color: rgba(0, 0, 0, 0.500);
+}
+.footer1 li{
+    margin-bottom: 1em;
+    font-size:larger;
+}
+.footer1 li:hover{
+    cursor:  pointer;
+}
+.footer2{
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 2;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.500);
+}
+.footer3{
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    line-height: 150%;
+    background-color: rgba(0, 0, 0, 0.500);
+}

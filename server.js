@@ -102,6 +102,10 @@ app.get('/home', async(req, res) => {
     
 });
 
+app.get('/Welcome',async(req,res)=>{
+    res.render("welcome.ejs");
+})
+
 app.post('/task',async(req,res)=>{
     console.log(req.body)
     const task = new Task(
