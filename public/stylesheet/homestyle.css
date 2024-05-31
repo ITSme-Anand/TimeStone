@@ -8,6 +8,16 @@
     font-weight: 500;
     font-style: normal;
 }
+div.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+input.error {
+    border: 1px solid red;
+    box-shadow: 0 0 5px red;
+}
 html{
     height: 100%;
 }

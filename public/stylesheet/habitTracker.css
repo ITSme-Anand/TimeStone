@@ -36,6 +36,17 @@ html{
   overflow-x:auto;
   border-radius: 1em;
 }
+div.error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+input.error {
+  border: 1px solid red;
+  box-shadow: 0 0 5px red;
+}
 
 .habitGridContainer::-webkit-scrollbar {
   height: 10px; 

@@ -62,6 +62,16 @@ html{
     position: absolute;
     border-radius: 5px;
 }
+div.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+input.error {
+    border: 1px solid red;
+    box-shadow: 0 0 5px red;
+}
 .halfhour{
     height:30px;
     width: 100%;

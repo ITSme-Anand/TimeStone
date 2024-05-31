@@ -1,7 +1,40 @@
 
 var button = document.querySelector(".add-task");
 var taskPopup = document.querySelector(".popup");
+const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const taskName = document.querySelector('input[name="taskName"]');
+    const startTime = document.querySelector('input[name="startTime"]');
+    const endTime = document.querySelector('input[name="endTime"]');
+    let error = false;
 
+    if (taskName.value === '') {
+        showError(taskName, 'Task name is required');
+        error = true;
+    }
+
+    if (startTime.value === '') {
+        showError(startTime, 'Start time is required');
+        error = true;
+    }
+
+    if (endTime.value === '') {
+        showError(endTime, 'End time is required');
+        error = true;
+    }
+
+    if (!error) {
+        this.submit();
+    }
+});
+
+function showError(input, message) {
+    const errorElement = document.createElement('div');
+    errorElement.style.color = 'red';
+    errorElement.textContent = message;
+    input.parentNode.insertBefore(errorElement, input.nextSibling);
+}
 button.onclick = ()=>{
     button.style.display = "none";
     taskPopup.style.display = "flex";

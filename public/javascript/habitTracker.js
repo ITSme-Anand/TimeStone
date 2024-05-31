@@ -1,4 +1,26 @@
 let menuBtn = document.querySelector(".topMenuBtn");
+const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const habitName = document.querySelector('input[name="habitName"]');
+    let error = false;
+
+    if (habitName.value === '') {
+        showError(habitName, 'Habit name is required');
+        error = true;
+    }
+
+    if (!error) {
+        this.submit();
+    }
+});
+
+function showError(input, message) {
+    const errorElement = document.createElement('div');
+    errorElement.style.color = 'red';
+    errorElement.textContent = message;
+    input.parentNode.insertBefore(errorElement, input.nextSibling);
+}
 menuBtn.addEventListener('click',function(event){
     var navigationBar = document.querySelector(".navigation");
     let HabitTrackerDiv = document.querySelector(".HabitTrackerDiv");
