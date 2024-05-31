@@ -159,7 +159,8 @@ html{
         left: 230px;
     }
     .timings{
-        font-size: small;
+        font-size: medium;
+        width: 10%;
     }
 }
 
@@ -170,6 +171,7 @@ html{
     }
     .timings{
         font-size: small;
+        width: 10%;
     }
 }
 
@@ -180,6 +182,7 @@ html{
     }
     .timings{
         font-size: small;
+        width: 10%;
     }
 }
 
@@ -190,6 +193,7 @@ html{
     }
     .timings{
         font-size: small;
+        width: 10%;
     }
 }
 
