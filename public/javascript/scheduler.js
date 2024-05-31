@@ -6,7 +6,6 @@ function hour(label){
     
     const time = document.createElement('div');
     time.classList.add('time');
-    
     time.id = label;
     time.innerHTML = label;
 
@@ -21,12 +20,14 @@ function hour(label){
     timeline2.id = label+':30';
 
     timeline1.addEventListener('click', () => {
+        popup.style.display = 'none';
         popup2.style.display = 'flex';
         popup2.querySelector('input[name="startTime"]').value = `${label}:00`;
         popup2.querySelector('input[name="endTime"]').value = `${label+1}:00`;
     }
     );
     timeline2.addEventListener('click', () => {
+        popup.style.display = 'none';
         popup2.style.display = 'flex';
         popup2.querySelector('input[name="startTime"]').value = `${label}:30`;
         popup2.querySelector('input[name="endTime"]').value = `${label+1}:00`;
@@ -41,12 +42,8 @@ for(let i=0;i<24;i++){
 const now = new Date();
 const currentHour = now.getHours();
 const currentMinute = now.getMinutes();
-console.log(currentHour);
-console.log(currentMinute);
-
 // Calculate the position of the line
 const position = (currentHour * 60 + currentMinute);
-console.log(position) // each half hour div is 30px
 function getTopPosition(StartTime) {
     const [hour, minute] = StartTime.split(':').map(Number);
     return hour * 60 + minute;
@@ -91,13 +88,13 @@ tasks.forEach(task => {
     const taskName = task.dataset.taskName;
     const startTime = task.dataset.startTime;
     const endTime = task.dataset.endTime;
-    console.log(taskName, startTime, endTime);
     const taskDiv = document.createElement('div');
     taskDiv.classList.add('taskDiv');
     taskDiv.style.top = `${getTopPosition(startTime)}px`;
     taskDiv.style.height = `${getsize(startTime, endTime)}px`;
     taskDiv.innerHTML = taskName;
     taskDiv.addEventListener('click', () => {
+        popup2.style.display = 'none';
         popup.style.display = 'flex';
         popup.querySelector('input[name="taskName"]').value = taskName;
         popup.querySelector('input[name="startTime"]').value = startTime;
