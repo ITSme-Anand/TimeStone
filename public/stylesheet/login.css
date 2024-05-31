@@ -80,15 +80,15 @@ button:hover {
 
 h3{
     font-size: medium;
-    color: rgb(8, 0, 255);
+    color: rgba(227, 227, 227, 0.722);
 }
 h3 a{
     text-decoration: underline;
-    color: rgb(8, 0, 255);
+    color: white;
 }
 
 h3 a:hover{
-    color: rgb(35, 28, 253);
+    color: rgb(165, 165, 165);
 }
 
 h2 a:visited{
