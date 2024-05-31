@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/stylesheet/scheduler.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TimeStone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="Tasks">
@@ -74,12 +75,17 @@
         </div>
       
     </form>
-    <div class="mainDiv">
+    <%- include('header.ejs') %>
+    <div class="mainSection">
+        <%- include('navbar.ejs') %>
+        <div class="mainDiv">
         <div class="timings">
         </div>
         <div class="schedule">
         </div>
     </div>
+    </div>
+    
 
 </body>
     <script src="javascript/scheduler.js"></script>
