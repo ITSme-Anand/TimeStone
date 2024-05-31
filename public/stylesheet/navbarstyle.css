@@ -1,8 +1,8 @@
-/* *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+} 
 
 @media screen and (max-width: 675px) {
     .navbar {
@@ -38,13 +38,6 @@
     display: none;
 }
 
-.topMenuBtn{
-    background-color: rgba(255, 255, 255, 0.827);
-}
-
-.topMenuBtn:hover{
-    cursor: pointer;
-}
 
 
 .userDetails{

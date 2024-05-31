@@ -27,6 +27,13 @@ menuBtn.onclick = ()=>{
 };
 
 
+var logOutBtn = document.querySelector(".logOutBtn");
+logOutBtn.addEventListener("click",(event)=>{
+    axios.post('http://localhost:3000/logout')
+    .then(response => console.log(response.data))
+    .catch(error => console.error('Error:', error));
+})
+
     var Tasks = document.getElementsByClassName("tasks");
     for (var i = 0; i < Tasks.length; i++) {
         console.log(Tasks[i].getAttribute("name")); // Access the 'name' property using getAttribute
