@@ -25,11 +25,9 @@ router.post('/login/post', async (req, res) => {
         res.redirect(301, '/home');
         return;
     } else if (user.status == 400) {
-        alert("Invalid Password");
         res.redirect('/auth/login');
         return;
     } else {
-        alert("User not found");
         res.redirect('/auth/register');
         return;
     }
