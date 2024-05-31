@@ -100,12 +100,9 @@ a{
     text-decoration: none;
 }
 
-a:hover{
-    color:black;
-}
 
 .feature:hover{
-    background-color: #7FC7D9;
+    background-color: rgba(45, 140, 208, 0.362);
     color: black;
 }
 

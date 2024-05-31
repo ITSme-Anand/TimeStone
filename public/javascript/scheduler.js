@@ -1,3 +1,20 @@
+var menuBtn = document.querySelector(".topMenuBtn");
+menuBtn.onclick = ()=>{
+    var navigationBar = document.querySelector(".navigation");
+    
+    var displayNav = navigationBar.getAttribute("style");
+    console.log(displayNav.endsWith("none;"))
+    if(displayNav.endsWith("none;")){
+        navigationBar.style.display = "block";
+    }
+    else{
+        navigationBar.style.display = "none";
+    }
+};
+
+
+
+
 const MainDiv = document.getElementsByClassName('mainDiv');
 
 const timings = document.querySelector('.timings');
@@ -22,12 +39,14 @@ function hour(label){
 
     timeline1.addEventListener('click', () => {
         popup2.style.display = 'flex';
+        popup.style.display = 'none';
         popup2.querySelector('input[name="startTime"]').value = `${label}:00`;
         popup2.querySelector('input[name="endTime"]').value = `${label+1}:00`;
     }
     );
     timeline2.addEventListener('click', () => {
         popup2.style.display = 'flex';
+        popup.style.display="none";
         popup2.querySelector('input[name="startTime"]').value = `${label}:30`;
         popup2.querySelector('input[name="endTime"]').value = `${label+1}:00`;
     });
@@ -45,7 +64,8 @@ console.log(currentHour);
 console.log(currentMinute);
 
 // Calculate the position of the line
-const position = (currentHour * 60 + currentMinute);
+const menuHeight = 31.20;
+const position = (currentHour * 60 + currentMinute + menuHeight);
 console.log(position) // each half hour div is 30px
 function getTopPosition(StartTime) {
     const [hour, minute] = StartTime.split(':').map(Number);
