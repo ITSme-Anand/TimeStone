@@ -119,6 +119,7 @@ tasks.forEach(task => {
     taskDiv.innerHTML = taskName;
     taskDiv.addEventListener('click', () => {
         popup.style.display = 'flex';
+        popup2.style.display = "none";
         popup.querySelector('input[name="taskName"]').value = taskName;
         popup.querySelector('input[name="startTime"]').value = startTime;
         popup.querySelector('input[name="endTime"]').value = endTime;
