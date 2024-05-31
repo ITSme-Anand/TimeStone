@@ -265,7 +265,25 @@ app.post('/scheduler/UpdateTask',async(req,res)=>{
     }
 })
 
-
+app.post('/scheduler/addTask',async(req,res)=>{
+    console.log(req.body)
+    const task = new Task(
+     {
+        taskName:req.body.taskName,
+        priority:req.body.priority,
+        startTime:req.body.startTime,
+        endTime:req.body.endTime
+    }
+        );
+    try {
+        const newTask = await task.save();
+        //res.status(201).json(newTask);
+        res.redirect("/scheduler");
+    }
+    catch(err){
+        console.log(err)
+    }
+});
 
 
 
