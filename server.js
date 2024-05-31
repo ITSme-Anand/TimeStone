@@ -285,6 +285,15 @@ app.post('/scheduler/addTask',async(req,res)=>{
     }
 });
 
+app.post('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Something went wrong when destroying the session!", err);
+            return res.status(500).send("Error logging out"); // Use a 500 status code for server errors
+        }
+        res.redirect('localhost:3000/auth/login');
+    });
+});
 
 
 

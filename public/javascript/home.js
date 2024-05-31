@@ -29,7 +29,7 @@ menuBtn.onclick = ()=>{
 
 var logOutBtn = document.querySelector(".logOutBtn");
 logOutBtn.addEventListener("click",(event)=>{
-    axios.post('http://localhost:3000/logout')
+    axios.post('logout')
     .then(response => console.log(response.data))
     .catch(error => console.error('Error:', error));
 })
