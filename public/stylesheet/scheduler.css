@@ -11,6 +11,21 @@ html{
 .mainSection{
     width: 100%;
 }
+
+.errorDiv{
+    margin-top: 5px;
+    color: rgb(255, 0, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorDiv p{
+    font-size: small;
+}
+
+
 .mainDiv{
     width: 80%;
     display: flex;
@@ -62,6 +77,9 @@ html{
     position: absolute;
     border-radius: 5px;
 }
+.taskDiv:hover{
+    cursor: pointer;
+}
 div.error {
     color: red;
     font-size: 0.8em;
@@ -84,6 +102,7 @@ input.error {
 }
 .halfhour:hover{
     background-color: darkgrey;
+    cursor: pointer;
 }
 .popup, .popup2{
     position:fixed;
@@ -109,6 +128,7 @@ input.error {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
 
 }
 .UpdateEvent, .addTask{

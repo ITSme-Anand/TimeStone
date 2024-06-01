@@ -87,7 +87,6 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: rgba(152, 251, 152, 0.434);
 }
 
 .errorDiv p{
@@ -105,7 +104,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.175);
+    background-color: rgba(0, 0, 0, 0.266);
     padding-top: 1em;
     border-radius: 2em;
     border: #ffffff solid 2px;
@@ -130,6 +129,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 .priorityLabel{
     border-radius: 10%;
