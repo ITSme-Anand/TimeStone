@@ -82,9 +82,6 @@
             <div class="addTaskdiv">
                 <div class="addButtonDiv">
                     <button class="add-task">
-                        <span class="material-symbols-outlined">
-                            add_circle
-                        </span>
                         <span> Add Task</span>
                     </button>
                 </div>
@@ -92,11 +89,12 @@
                     <form action="/task" method="post">
                     <div class="popup">
                         <div>
-                            <label for="input" class="EnterTaskPrompt">Enter Task</label>
+                            <label for="taskinput" class="EnterTaskPrompt">Enter Task</label>
                         </div>
                         <div class="mainSection" style="justify-content: space-around;">
-                            <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
+                            <input type="text" class="Taskinput" id="taskinput" name="taskName" placeholder="Enter your task">
                         </div>
+                        <div id="taskNameErrorDiv"></div>
                         <div class="prioritydiv">
                             <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
                             <select class="priority" name="priority" id="priority">
@@ -110,6 +108,7 @@
                             <p>-</p>
                             <input type="time" name="endTime" id="endTime">
                         </div>
+                        <div id="timeErrorDiv"></div>
                         <div>
                             <input class="addTask" type="submit" value="Save" > </input>
                         </div>
