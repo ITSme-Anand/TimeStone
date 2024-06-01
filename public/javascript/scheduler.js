@@ -14,7 +14,6 @@ menuBtn.onclick = ()=>{
 
 
 
-
 const MainDiv = document.getElementsByClassName('mainDiv');
 
 const timings = document.querySelector('.timings');
@@ -80,7 +79,7 @@ function getsize(startTime, endTime) {
 const line = document.createElement('div');
 line.style.position = 'absolute';
 // line.style.top = '0px'; // set the position
-line.style.top = `${position}px`; // set the position
+line.style.top = `${position-menuHeight}px`; // set the position
 line.style.width = '100%';
 line.style.borderTop = '1px solid red'; // make it a red line
 
@@ -126,6 +125,83 @@ tasks.forEach(task => {
     schedule.appendChild(taskDiv);
     // Now you can use taskName, startTime, and endTime
 });
+
+
+const updateTaskForm = document.querySelector("#updateTaskForm");
+updateTaskForm.addEventListener('submit', (event)=>{
+    taskName = document.querySelector("#taskName");
+    startTime = document.querySelector('#startTime');
+    endTime = document.querySelector("#endTime");
+    var error = false;
+    let timeError = false;
+    let taskNameErrorDiv = document.querySelector("#taskNameErrorDiv");
+    let timeErrorDiv = document.querySelector("#timeErrorDiv");
+    if(taskName.value===''){
+        console.log("working");
+        taskNameErrorDiv.innerHTML = '<span class="material-symbols-outlined">warning</span><p>Taskname required!</p>';
+        taskNameErrorDiv.classList.add("errorDiv");
+        error=true;
+    }
+    if(!error){
+        taskNameErrorDiv.innerHTML = '';
+        taskNameErrorDiv.classList.remove("errorDiv");
+    }
+    if(startTime.value ==='' || endTime.value === ''){
+        timeErrorDiv.innerHTML = '<span class="material-symbols-outlined">warning</span><p>Time must be filled!</p>';
+        timeErrorDiv.classList.remove("errorDiv");
+        timeErrorDiv.classList.add("errorDiv");
+        error=true;
+        timeError=true;
+    }
+    if(!timeError){
+        timeErrorDiv.innerHTML = "";
+        timeErrorDiv.classList.remove("errorDiv");
+    }
+    if(error){
+        event.preventDefault();
+        popup.style.display = "flex";
+    }
+    
+})
+
+
+const addTaskForm = document.querySelector("#addTaskForm");
+addTaskForm.addEventListener('submit', (event)=>{
+    addtaskName = document.querySelector("#addTaskInput");
+    addstartTime = document.querySelector('#addstartTime');
+    addendTime = document.querySelector("#addendTime");
+    var error = false;
+    let timeError = false;
+    let addtaskNameErrorDiv = document.querySelector("#addTaskNameErrorDiv");
+    let addtimeErrorDiv = document.querySelector("#addTimeErrorDiv");
+    if(addtaskName.value===''){
+        console.log("working");
+        addtaskNameErrorDiv.innerHTML = '<span class="material-symbols-outlined">warning</span><p>Taskname required!</p>';
+        addtaskNameErrorDiv.classList.add("errorDiv");
+        error=true;
+    }
+    if(!error){
+        addtaskNameErrorDiv.innerHTML = '';
+        addtaskNameErrorDiv.classList.remove("errorDiv");
+    }
+    if(startTime.value ==='' || endTime.value === ''){
+        addtimeErrorDiv.innerHTML = '<span class="material-symbols-outlined">warning</span><p>Time must be filled!</p>';
+        addtimeErrorDiv.classList.remove("errorDiv");
+        addtimeErrorDiv.classList.add("errorDiv");
+        error=true;
+        timeError=true;
+    }
+    if(!timeError){
+        addtimeErrorDiv.innerHTML = "";
+        addtimeErrorDiv.classList.remove("errorDiv");
+    }
+    if(error){
+        event.preventDefault();
+        popup2.style.display = "flex";
+    }
+    
+})
+
 
 
 

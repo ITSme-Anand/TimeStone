@@ -14,7 +14,7 @@
             <div class="task" data-task-name="<%=Tasks[i].taskName%>" data-start-time="<%=Tasks[i].startTime%>" data-end-time="<%=Tasks[i].endTime%>">
             </div>
     <%}%>
-    <form action="/scheduler/UpdateTask" method="post">
+    <form action="/scheduler/UpdateTask" method="post" id="updateTaskForm">
     <div class="popup">
         <div class="popup-content">
             <div class="popup-head">
@@ -27,6 +27,7 @@
                 <label for="taskName">Task Name:</label>
                 <input type="text" id="taskName" name="taskName" >
             </div>
+            <div id="taskNameErrorDiv"></div>
             </div>
             <div class="times">
                 <div class="startTime">
@@ -38,13 +39,14 @@
                     <input type="time" id="endTime" name="endTime">
                 </div>
             </div>
+            <div id="timeErrorDiv"></div>
             <div class="updateButton">
                 <input type="submit" class="UpdateEvent" value="Update Event"></input>
             </div>
         </div>
     </div>
     </form>
-    <form action="/scheduler/addTask" method="post">
+    <form action="/scheduler/addTask" method="post" id="addTaskForm">
         <div class="popup2">
             <div class="popup-header">
                 <span class="addTask_close">&times;</span>
@@ -53,8 +55,9 @@
             </div>
             <div class="taskName">
                     <label for="input" class="EnterTaskPrompt">Enter Task</label>
-                    <input type="text" class="Taskinput" name="taskName" placeholder="Enter your task">
+                    <input type="text" class="Taskinput" id="addTaskInput" name="taskName" placeholder="Enter your task">
             </div>
+            <div id="addTaskNameErrorDiv"></div>
             <div class="prioritydiv">
                 <label for="priority" class="priorityLabel"> <span class="material-symbols-outlined">flag</span> </label>
                 <select class="priority" name="priority" id="priority">
@@ -64,10 +67,11 @@
                 </select>
             </div>
             <div class="timediv">
-                <input type="time" name="startTime" id="startTime">
+                <input type="time" name="startTime" id="addstartTime">
                 <p>-</p>
-                <input type="time" name="endTime" id="endTime">
+                <input type="time" name="endTime" id="addendTime">
             </div>
+            <div id="addTimeErrorDiv"></div>
             <div>
                 <input class="addTask" type="submit" value="Save" > </input>
             </div>

@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 20%;
     border: black solid 2px;
     text-align: center;
@@ -41,13 +41,14 @@
 
 
 .userDetails{
+    margin-top: 5em;
     width: 80%;
     height: fit-content;
-    background-color:rgba(76, 180, 255, 0.362);
     border-radius: 1.5em;
     padding: 0.1em;
     color: #DCF2F1;
     font-size: 75%;
+    margin-bottom: 12em;
 }
 
 .featureBarsDiv{
@@ -75,6 +76,8 @@
     color: rgb(255, 255, 255);
 }
 
+
+
 .feature li{
     font-weight: lighter;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -97,6 +100,7 @@ a{
 .feature:hover{
     background-color: rgba(45, 140, 208, 0.362);
     color: black;
+    cursor: pointer;
 }
 
 
