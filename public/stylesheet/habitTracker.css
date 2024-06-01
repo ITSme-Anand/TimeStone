@@ -42,6 +42,28 @@ div.error {
   margin-top: 5px;
   margin-bottom: 10px;
 }
+.HabitName, .habittime, .habittimeend{
+  display: flex;
+  flex-direction: column;
+
+}
+.inputname{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em ;
+  justify-content: center;
+
+}
+#bgvid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
 
 input.error {
   border: 1px solid red;

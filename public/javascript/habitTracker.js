@@ -2,6 +2,49 @@
 
 let menuBtn = document.querySelector(".topMenuBtn");
 const form = document.querySelector('form');
+var habitinputerror = document.getElementById('Habitinputerror');
+var startTimeerror = document.getElementById('startTimeerror');
+var endTimeerror = document.getElementById('endTimeerror');
+var days = document.querySelectorAll('input[type=checkbox]');
+var dayerror = document.getElementById('dayserror');
+
+form.addEventListener('submit', (e) => {
+    
+    habitinputerror.innerText = '';
+    startTimeerror.innerText = '';
+    endTimeerror.innerText = '';
+    const habitName = form.habitName.value;
+    const startTime = form.startTime.value;
+    const endTime = form.endTime.value;
+    var atLeastOneChecked = false;
+    for(let i of days){
+        if(i.checked){
+            atLeastOneChecked = true;
+            break;
+        }
+    }
+    if(habitName === ''){
+        e.preventDefault();
+        habitinputerror.innerText = 'Habit name is required';
+        habitinputerror.style.color = 'red';
+    }
+    if(startTime === ''){
+        e.preventDefault();
+        startTimeerror.innerText = 'start time is required';
+        startTimeerror.style.color = 'red';
+    }
+    if(endTime === ''){
+        e.preventDefault();
+        endTimeerror.innerText = 'end time is required';
+        endTimeerror.style.color = 'red';
+    }
+    if(!atLeastOneChecked){
+        e.preventDefault();
+        dayerror.innerText = 'At least one day must be selected';
+        dayerror.style.color = 'red';
+    }
+});
+
 
 menuBtn.addEventListener('click',function(event){
     var navigationBar = document.querySelector(".navigation");

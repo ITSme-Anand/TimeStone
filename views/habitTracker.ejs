@@ -6,6 +6,10 @@
         
     </head>
     <body>
+        
+        <video autoplay muted loop id="bgvid">
+            <source src="/images/homebg.mp4" type="video/mp4">
+        </video>
         <%- include('header.ejs') %>
         
         <div class="mainSection">
@@ -70,13 +74,22 @@
                             <div>
                                 <label for="input" class="AddHabitPrompt">Add Habit</label>
                             </div>
-                            <div class="HabitInputDiv" style="justify-content: space-around;">
-                                <input type="text" class="Habitinput" name="habitName" placeholder="Enter your Habit">
+                            <div class="HabitName">
+                                <div class="HabitInputDiv" style="justify-content: space-around;">
+                                    <input type="text" class="Habitinput" name="habitName" placeholder="Enter your Habit">
+                                </div>
+                                <div id="Habitinputerror"></div>
                             </div>
                             <div class="timediv">
-                                <input type="time" name="startTime" id="startTime">
+                                <div class="habittime">
+                                    <input type="time" name="startTime" id="startTime">
+                                    <div id="startTimeerror"></div>
+                                </div>
                                 <p>-</p>
-                                <input type="time" name="endTime" id="endTime">
+                                <div class="habittimeend">
+                                    <input type="time" name="endTime" id="endTime">
+                                    <div id="endTimeerror"></div>
+                                </div>
                             </div>
                             <div class="daysDiv">
                                 <div class="checkbox">
@@ -128,8 +141,10 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                
-                                
+                                <div>
+                                    <div id="dayserror"></div>
+                                </div>
+                            
                             </div>
                             <div>
                                 <input class="HabitSaver" type="submit" value="Save" > </input>
