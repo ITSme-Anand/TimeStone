@@ -3,25 +3,42 @@ var button = document.querySelector(".add-task");
 var taskPopup = document.querySelector(".popup");
 const form = document.querySelector('form');
 form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const taskName = document.querySelector('input[name="taskName"]');
-    const startTime = document.querySelector('input[name="startTime"]');
-    const endTime = document.querySelector('input[name="endTime"]');
+    const taskName = document.querySelector('#taskinput');
+    const startTime = document.querySelector('#startTime');
+    const endTime = document.querySelector('#endTime');
     let error = false;
+    let timeDivError = false;
 
     if (taskName.value === '') {
-        showError(taskName, 'Task name is required');
+        taskNameErrorDiv = document.querySelector("#taskNameErrorDiv");
+        taskNameErrorDiv.innerHTML = '<span class="material-symbols-outlined">warning</span><p>task name required</p>';
+        taskNameErrorDiv.classList.remove("errorDiv");
+        taskNameErrorDiv.classList.add("errorDiv");
         error = true;
     }
-
-    if (startTime.value === '') {
-        showError(startTime, 'Start time is required');
-        error = true;
+    if(!error){
+        taskNameErrorDiv.innerHTML = '';
+        taskNameErrorDiv.classList.remove("errorDiv");
     }
 
-    if (endTime.value === '') {
-        showError(endTime, 'End time is required');
+    if (startTime.value === '' || endTime.value === '' ) {
+        timeErrorDiv = document.querySelector("#timeErrorDiv");
+        timeErrorDiv.innerHTML = '<span class="material-symbols-outlined">warning</span><p>Time must be entered</p>';
+        timeErrorDiv.classList.remove("errorDiv");
+        timeErrorDiv.classList.add("errorDiv");
         error = true;
+        timeDivError = true;
+    }
+
+    if(!timeDivError){
+        timeErrorDiv.innerHTML = '';
+        timeErrorDiv.classList.remove("errorDiv");
+    }
+
+    if(error){
+        button.style.display = "none";
+        taskPopup.style.display = "flex";
+        event.preventDefault();
     }
 
     if (!error) {
@@ -29,12 +46,7 @@ form.addEventListener('submit', function(event) {
     }
 });
 
-function showError(input, message) {
-    const errorElement = document.createElement('div');
-    errorElement.style.color = 'red';
-    errorElement.textContent = message;
-    input.parentNode.insertBefore(errorElement, input.nextSibling);
-}
+
 button.onclick = ()=>{
     button.style.display = "none";
     taskPopup.style.display = "flex";
