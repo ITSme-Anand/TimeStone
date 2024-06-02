@@ -93,6 +93,10 @@ Habit = mongoose.model('Habits',HabitSchema);
 
 app.get('/home', async(req, res) => {
     if (req.session.isAuth) {
+        console.log('inside home')
+        console.log(req.session)
+        var passedVariable = req.query
+        console.log(passedVariable);
         var taskdetails = await Task.find();
         console.log(taskdetails)
         res.render('home',{taskdetails:taskdetails});
@@ -125,14 +129,14 @@ app.post('/task',async(req,res)=>{
     }
 });
 app.post('/logout', (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            console.error("Something went wrong when destroying the session!", err);
-            return res.status(500).send("Error logging out"); // Use a 500 status code for server errors
-        }
-        res.send("Logged out");
+    req.session.isAuth = false;
+    // req.session.destroy((err) => {
+    //     if (err) {
+    //         console.error("Something went wrong when destroying the session!", err);
+    //         return res.status(500).send("Error logging out"); // Use a 500 status code for server errors
+    //     }
+        res.send('Logged out');
     });
-});
 
 app.post('/UpdateTask', async (req, res) => {
     console.log(req.body);
@@ -306,7 +310,6 @@ app.post('/logout', (req, res) => {
 
 
 const userRouter = require('./routes/auth');
-const { type } = require('os');
 app.use('/auth',userRouter);
 app.listen(3000);
 

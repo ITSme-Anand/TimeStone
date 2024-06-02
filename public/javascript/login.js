@@ -21,7 +21,11 @@ form.addEventListener('submit',(event)=>{
         error = true;
     }
     if(error){
+
         event.preventDefault();
         return;
+    }
+    else{
+        localStorage.setItem('username',userName.value);
     }
 })

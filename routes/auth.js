@@ -21,8 +21,7 @@ router.post('/login/post', async (req, res) => {
     console.log(user.status);
     if (user.status == 200) {
         req.session.isAuth = true;
-        req.session.save();
-        console.log(req.session);
+        console.log('authentication successful');
         res.redirect(301, '/home');
         return;
     } else if (user.status == 400) {

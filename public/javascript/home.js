@@ -2,6 +2,10 @@
 var button = document.querySelector(".add-task");
 var taskPopup = document.querySelector(".popup");
 const form = document.querySelector('form');
+const username = localStorage.getItem('username');
+var item = document.querySelector('#username');
+item.innerHTML ='Hey '+ username + '!';
+console.log(item);
 form.addEventListener('submit', function(event) {
     const taskName = document.querySelector('#taskinput');
     const startTime = document.querySelector('#startTime');

@@ -1,6 +1,5 @@
 var logout = document.getElementById('logout');
 logout.addEventListener('click', function() {
-    console.log('hi');
     axios.post('/logout', {}, {
         headers: {
             'Content-Type': 'application/json'
