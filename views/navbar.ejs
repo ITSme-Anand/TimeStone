@@ -9,7 +9,7 @@
             <nav>
                 <div class="navbar">
                     <div class="userDetails textcenterProp">
-                        <h1 style="font-family:cursive;" id="username">Hey <span></span>!</h1>
+                        <h1 style="font-family:cursive;" id="navusername">Hey <span></span>!</h1>
                     </div>
                     <div class="featuresBarDiv">
                         
@@ -33,4 +33,10 @@
         </div>
         
     </body>
+    <script> 
+        const navusername = localStorage.getItem('username');
+        var item = document.querySelector('#navusername');
+        item.innerHTML ='Hey '+ navusername + '!';
+        console.log(item);
+    </script>
 </html>
