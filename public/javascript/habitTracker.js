@@ -1,5 +1,4 @@
 
-
 let menuBtn = document.querySelector(".topMenuBtn");
 const form = document.querySelector('form');
 var habitinputerror = document.getElementById('Habitinputerror');
@@ -99,7 +98,12 @@ for(var i=0;i<HabitDoneButtons.length;i++){
                     "habitName": habitName,
                     "day": day
                 })
-                .then(response => console.log(response.data),window.location.reload())
+                .then(
+                    response => console.log(response.data),
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000)
+                )
                 .catch(error => console.error('Error:', error));
         
     })
