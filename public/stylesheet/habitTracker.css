@@ -5,11 +5,11 @@
 }
 html{
     height:max-content;
-    background-image: url('../images/clocksy\ \(2\).jpeg');
     background-position:center;
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    background-color: black;
 
 }
 

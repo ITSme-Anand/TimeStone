@@ -21,6 +21,7 @@
 
 html{
     height: 100%;
+    background-color: black;
 }
 .headerClass{
     height: 5%;
@@ -33,7 +34,6 @@ html{
 }
 body{
     height: 100%;
-    background-image: url("../images/clocksy\ \(2\).jpeg");
     background-position:center;
     background-repeat: no-repeat;
     background-size:cover;

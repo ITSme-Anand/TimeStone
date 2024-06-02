@@ -102,7 +102,7 @@ for(var i=0;i<HabitDoneButtons.length;i++){
                     response => console.log(response.data),
                     setTimeout(() => {
                         window.location.reload();
-                    }, 1000)
+                    }, 150)
                 )
                 .catch(error => console.error('Error:', error));
         

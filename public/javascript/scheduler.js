@@ -184,7 +184,7 @@ addTaskForm.addEventListener('submit', (event)=>{
         addtaskNameErrorDiv.innerHTML = '';
         addtaskNameErrorDiv.classList.remove("errorDiv");
     }
-    if(startTime.value ==='' || endTime.value === ''){
+    if(addstartTime.value ==='' || addendTime.value === ''){
         addtimeErrorDiv.innerHTML = '<span class="material-symbols-outlined">warning</span><p>Time must be filled!</p>';
         addtimeErrorDiv.classList.remove("errorDiv");
         addtimeErrorDiv.classList.add("errorDiv");
